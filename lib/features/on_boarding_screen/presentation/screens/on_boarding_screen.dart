@@ -1,7 +1,28 @@
+// ignore_for_file: avoid_print, must_be_immutable
+
+import 'dart:async';
+import 'package:doctoria_app/core/theming/colors.dart';
+import 'package:doctoria_app/core/theming/media_query_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:onboarding/onboarding.dart';
 
+import '../../../../core/theming/image_manager.dart';
+import '../../../../core/theming/spacing.dart';
+import '../../../../generated/l10n.dart';
+// OnBoarding content Model
+class OnBoard {
+  final String image, title, description;
+
+  OnBoard({
+    required this.image,
+    required this.title,
+    required this.description,
+  });
+}
+
+
+
+// OnBoardingScreen
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
 
@@ -10,273 +31,230 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  late int index;
+
+  // Variables
+  late PageController _pageController;
+  int _pageIndex = 0;
+  Timer? _timer;
+
   @override
   void initState() {
-    index = 0;
     super.initState();
+    // Initialize page controller
+    _pageController = PageController(initialPage: 0);
+    // Automatic scroll behaviour
+    _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
+      if (_pageIndex < 3) {
+        _pageIndex++;
+      } else {
+        _pageIndex = 0;
+      }
+
+      _pageController.animateToPage(
+        _pageIndex,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+    });
   }
 
-  final onboardingPagesList = [
-    PageModel(
-      widget: DecoratedBox(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            width: 0.0,
-            color: Colors.white,
-          ),
-        ),
-        child: SingleChildScrollView(
-          controller: ScrollController(),
-          child: Column(
-
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset(
-                  'assets/images/OnBoardingScreen1.png',
-                ),
-              ),
-
-              const Text(
-                'Find a doctor',
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 28,
-
-                    color: Color(0xff212121)),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20,),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  'You can search for a doctor by specialty and the location you are in',
-                  style: TextStyle(
-                    color: Color(0xff212121),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-    PageModel(
-      widget: DecoratedBox(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            width: 0.0,
-            color: Colors.white,
-          ),
-        ),
-        child: SingleChildScrollView(
-          controller: ScrollController(),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset(
-                  'assets/images/OnBoardingScreen2.png',
-                ),
-              ),
-              const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Choose a Doctor',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 28,
-                      color: Color(0xff212121)),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 20,),
-              const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'You can compare between doctors, according to the evaluation of other patients',
-                  style: TextStyle(
-                    color: Color(0xff212121),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-    PageModel(
-      widget: DecoratedBox(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            width: 0.0,
-            color: Colors.white,
-          ),
-        ),
-        child: SingleChildScrollView(
-          controller: ScrollController(),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 45.0,
-                  vertical: 90.0,
-                ),
-                child: Image.asset(
-                  'assets/images/OnBoardingScreen3.png',
-                ),
-              ),
-              const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Book your date',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 28,
-                      color: Color(0xff212121)),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 20,),
-              const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'After choosing the doctor that suits you, you can book your appointment online',
-                  style: TextStyle(
-                    color: Color(0xff212121),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ),
-  ];
-  SizedBox _nextButton({void Function(int)? setIndex}) {
-    return SizedBox(
-      width: double.infinity,
-      child: Align(
-        alignment: Alignment.center,
-        child: Material(
-          borderRadius: BorderRadius.circular(8),
-          color: const Color(0xff246BFD),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(8),
-            onTap: () {
-              if (setIndex != null) {
-                index = 2;
-                setIndex(2);
-              }
-            },
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-              child: Text(
-                'Next',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                    letterSpacing: 1.0),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  SizedBox get _startNowButton {
-    return SizedBox(
-      width: double.infinity,
-      child: Align(
-        alignment: Alignment.center,
-        child: Material(
-          borderRadius: BorderRadius.circular(8),
-          color: const Color(0xff246BFD),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(8),
-            onTap: () {},
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-              child: Text(
-                'Start now',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                    letterSpacing: 1.0),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
+  @override
+  void dispose() {
+    // Dispose everything
+    _pageController.dispose();
+    _timer!.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: Onboarding(
-        pages: onboardingPagesList,
-        onPageChange: (int pageIndex) {
-          index = pageIndex;
-        },
-        footerBuilder: (context, dragDistance, pagesLength, setIndex) {
-          return Padding(
-            padding: const EdgeInsets.all(45.0),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 45.0),
-                  child: CustomIndicator(
-                    netDragPercent: dragDistance,
-                    pagesLength: pagesLength,
-                    indicator: Indicator(
-                      activeIndicator: ActiveIndicator(
-                          color: const Color(0xff246BFD).withOpacity(0.5)),
-                      closedIndicator:
-                          const ClosedIndicator(color: Color(0xff246BFD)),
+    // OnBoarding content list
+    final List<OnBoard> demoData = [
+      OnBoard(
+        image: ImageManager.onboardingScreen1Image,
+        title: S.of(context).find_a_doctor,
+        description:S.of(context).intro_screen1,
+      ),
+      OnBoard(
+        image: ImageManager.onboardingScreen2Image,
+        title: S.of(context).choose_a_doctor,
+        description:S.of(context).intro_screen2,
+      ),
+      OnBoard(
+        image:ImageManager.onboardingScreen3Image,
+        title: S.of(context).book_your_date,
+        description:S.of(context).intro_screen3,
+      ),
 
-                      indicatorDesign: IndicatorDesign.polygon(
-                        polygonDesign: PolygonDesign(
-                          polygonRadius: 6.0.sp,
-                          polygon: DesignType.polygon_circle,
-                        ),
+    ];
+    return Scaffold(
+      body: Stack(children: [
+
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          // Background gradient
+          decoration: const BoxDecoration(
+              color: ColorsManager.mainWhite
+          ),
+          child: Column(
+            children: [
+              // Carousel area
+              Expanded(
+                child: PageView.builder(
+                  onPageChanged: (index) {
+                    setState(() {
+                      _pageIndex = index;
+                    });
+                  },
+                  itemCount: demoData.length,
+                  controller: _pageController,
+                  itemBuilder: (context, index) => OnBoardContent(
+                    title: demoData[index].title,
+                    description: demoData[index].description,
+                    image: demoData[index].image,
+                  ),
+                ),
+              ),
+              // Indicator area
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ...List.generate(
+                    demoData.length,
+                        (index) => Padding(
+                      padding: const EdgeInsets.only(right: 5),
+                      child: DotIndicator(
+                        isActive: index == _pageIndex,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // White space
+              verticalSpacing(120),
+              // Button area
+              InkWell(
+                onTap: () {
+                  print("Button clicked!");
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(bottom: 48),
+                  height: context.screenHeight * 0.075,
+                  width: context.screenWidth,
+                  decoration: BoxDecoration(
+                    color: ColorsManager.mainBlue,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child:  Center(
+                    child: Text(
+                      _pageIndex == demoData.length - 1
+                          ? S.of(context).start_now
+                          : S.of(context).next,
+                      style:  TextStyle(
+                        fontFamily: "Poppins",
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20.sp,
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 50,
-                ),
-                index != pagesLength - 1
-                    ? _nextButton(setIndex: setIndex)
-                    : _startNowButton,
-              ],
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          top: 50.0.h,
+          right: 40.0.w,
+          child: GestureDetector(
+            onTap: () {
+              // Handle skip action
+              print("Skip clicked!");
+            },
+            child: Text(
+              S.of(context).skip,
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: ColorsManager.mainBlack,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          );
-        },
+          ),
+        ),
+
+      ],),
+    );
+  }
+}
+
+// OnBoarding area widget
+class OnBoardContent extends StatelessWidget {
+  OnBoardContent({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.description,
+  });
+
+  String image;
+  String title;
+  String description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        verticalSpacing(100),
+        Image.asset(image),
+       verticalSpacing(15),
+        Text(
+          title,
+          style: const TextStyle(
+            color: ColorsManager.mainBlack,
+            fontSize: 23,
+            fontFamily: "Poppins",
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        verticalSpacing(16.h),
+        Padding(
+          padding:  EdgeInsets.only(left: 20.w,right: 20.w),
+          child: Text(
+
+            description,
+            textAlign: TextAlign.center,
+            style:  TextStyle(
+              fontFamily: "Poppins",
+              color: ColorsManager.grey.withOpacity(0.6),
+              fontSize: 17.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+// Dot indicator widget
+class DotIndicator extends StatelessWidget {
+  const DotIndicator({
+    this.isActive = false,
+    super.key,
+  });
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      height: 10.h,
+      width: 10.w,
+      decoration: BoxDecoration(
+        color: isActive ? ColorsManager.mainBlue : ColorsManager.grey.withOpacity(0.4),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(12),
+        ),
       ),
     );
   }

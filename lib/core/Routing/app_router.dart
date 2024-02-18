@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/on_boarding_screen/presentation/screens/on_boarding_screen.dart';
+import '../../features/spalsh_screen/presentaions/screens/spash_screen.dart';
 import '../di/dependacy_injection.dart';
 import 'routers.dart';
 class AppRouter {
 Route generateRoute(RouteSettings settings){
   switch(settings.name){
     case Routes.onBoardingScreen:
-    return MaterialPageRoute(builder: (context) => const OnBoardingScreen(),);
+    return MaterialPageRoute(builder: (context) => const Splash(),);
     // case Routes.homeScreen:
     //   return MaterialPageRoute(builder: (context) => BlocProvider(
     //       create: (context) => getIt<LoginCubit>(),

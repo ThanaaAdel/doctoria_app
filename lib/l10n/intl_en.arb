@@ -1,0 +1,11 @@
+{
+  "find_a_doctor": "Find a doctor",
+  "choose_a_doctor": "Choose a Doctor",
+  "book_your_date": "Book Your date",
+  "intro_screen1": "You can search for a doctor by specialty and the location you are in",
+  "intro_screen2": "You can compare between doctors, according to the evaluation of other patients",
+  "intro_screen3": "After choosing the doctor that suits you, you can book your appointment online",
+  "next": "Next",
+  "start_now": "Start Now",
+  "skip": "Skip"
+}
