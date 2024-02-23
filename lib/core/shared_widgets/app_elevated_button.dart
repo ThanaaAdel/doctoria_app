@@ -15,7 +15,7 @@ class AppTextButton extends StatelessWidget {
       this.textStyle, this.borderRadius});
   final String textButton;
   final double? borderRadius;
-  final VoidCallback onPressed;
+  final Function()? onPressed;
   final Color? backgroundColor;
   final double? horizontalPadding;
   final double? verticalPadding;
@@ -29,7 +29,7 @@ class AppTextButton extends StatelessWidget {
           minimumSize:
               MaterialStateProperty.all(const Size(double.infinity, 52)),
           shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 16))),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 8))),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           padding: MaterialStatePropertyAll<EdgeInsets>(
             EdgeInsets.symmetric(

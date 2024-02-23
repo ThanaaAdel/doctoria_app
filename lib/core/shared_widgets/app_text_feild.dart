@@ -7,6 +7,7 @@ import '../theming/styles.dart';
 class AppTextFormField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final bool? obscureText;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
@@ -23,55 +24,60 @@ class AppTextFormField extends StatelessWidget {
       this.enabledBorder,
       this.contentPadding,
       required this.validator,
-      this.controller, this.textInputType});
+      this.controller,
+      this.textInputType, this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-keyboardType: textInputType,
+      keyboardType: textInputType,
       controller: controller,
-      decoration: InputDecoration(
-
-          isDense: true,
-          contentPadding: contentPadding ??
-              EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-          focusedBorder: focusedBorder ??
-              OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: ColorsManager.mainBlue,
-                  width: 1.3,
-                ),
-                borderRadius: BorderRadius.circular(16.0.sp),
-              ),
-          enabledBorder: enabledBorder ??
-              OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: ColorsManager.lightGrey,
-                  ),
-                  borderRadius: BorderRadius.circular(16.0.sp)),
-          errorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.red,
-              width: 1.3,
-            ),
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.red,
-              width: 1.3,
-            ),
-            borderRadius: BorderRadius.circular(16.0),
-          ),
-          hintText: hintText,
-          hintStyle: TextStyles.font14Gray,
-          suffixIcon: suffixIcon,
-          fillColor: ColorsManager.moreLightGrey,
-          filled: true),
+      decoration: decorationFromTextField(),
       obscureText: obscureText ?? false,
       validator: (value) {
         return validator(value);
       },
     );
+  }
+
+  InputDecoration decorationFromTextField() {
+    return InputDecoration(
+        isDense: true,
+        contentPadding: contentPadding ??
+            EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
+        focusedBorder: focusedBorder ??
+            OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: ColorsManager.mainBlue,
+                width: 1.3,
+              ),
+              borderRadius: BorderRadius.circular(8.0.sp),
+            ),
+        enabledBorder: enabledBorder ??
+            OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: ColorsManager.lightGrey,
+                ),
+                borderRadius: BorderRadius.circular(16.0.sp)),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        hintText: hintText,
+        hintStyle: TextStyles.font14Gray,
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+
+       );
   }
 }

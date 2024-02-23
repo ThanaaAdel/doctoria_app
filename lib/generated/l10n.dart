@@ -139,6 +139,226 @@ class S {
       args: [],
     );
   }
+
+  /// `Sign In`
+  String get sign_in {
+    return Intl.message(
+      'Sign In',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login to your account`
+  String get text_sign_in {
+    return Intl.message(
+      'Login to your account',
+      name: 'text_sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up to your account`
+  String get text_sign_up {
+    return Intl.message(
+      'Sign up to your account',
+      name: 'text_sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password`
+  String get forget_password {
+    return Intl.message(
+      'Forget Password',
+      name: 'forget_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get sign_up {
+    return Intl.message(
+      'Sign up',
+      name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account ? `
+  String get do_not_have_account {
+    return Intl.message(
+      'Don\'t have an account ? ',
+      name: 'do_not_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Referral Code`
+  String get referral_code {
+    return Intl.message(
+      'Referral Code',
+      name: 'referral_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue_button {
+    return Intl.message(
+      'Continue',
+      name: 'continue_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get reset_password {
+    return Intl.message(
+      'Reset Password',
+      name: 'reset_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Via SMS`
+  String get reset_via_sms {
+    return Intl.message(
+      'Reset Via SMS',
+      name: 'reset_via_sms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Via Whatsapp`
+  String get reset_via_whatsapp {
+    return Intl.message(
+      'Reset Via Whatsapp',
+      name: 'reset_via_whatsapp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification`
+  String get verification {
+    return Intl.message(
+      'Verification',
+      name: 'verification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Verification Code`
+  String get text_verification_Screen {
+    return Intl.message(
+      'Enter Verification Code',
+      name: 'text_verification_Screen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the 4-digit that we have sent via the phone number .`
+  String get description_text_verification_screen {
+    return Intl.message(
+      'Enter the 4-digit that we have sent via the phone number .',
+      name: 'description_text_verification_screen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change number`
+  String get change_number {
+    return Intl.message(
+      'Change number',
+      name: 'change_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create new password`
+  String get create_new_password {
+    return Intl.message(
+      'Create new password',
+      name: 'create_new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Your New Password`
+  String get text_create_new_password_page {
+    return Intl.message(
+      'Create Your New Password',
+      name: 'text_create_new_password_page',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations!`
+  String get congratulations {
+    return Intl.message(
+      'Congratulations!',
+      name: 'congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your account is ready to use, you will be redirected to the Home page in a few Seconds...`
+  String get text_congratulations {
+    return Intl.message(
+      'Your account is ready to use, you will be redirected to the Home page in a few Seconds...',
+      name: 'text_congratulations',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

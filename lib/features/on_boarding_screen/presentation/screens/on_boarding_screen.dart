@@ -1,11 +1,9 @@
-// ignore_for_file: avoid_print, must_be_immutable
 
-import 'dart:async';
+import 'package:doctoria_app/core/helper/extentions.dart';
 import 'package:doctoria_app/core/theming/colors.dart';
 import 'package:doctoria_app/core/theming/media_query_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/theming/image_manager.dart';
 import '../../../../core/theming/spacing.dart';
 import '../../../../generated/l10n.dart';
@@ -35,39 +33,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   // Variables
   late PageController _pageController;
   int _pageIndex = 0;
-  Timer? _timer;
+
 
   @override
   void initState() {
     super.initState();
     // Initialize page controller
     _pageController = PageController(initialPage: 0);
-    // Automatic scroll behaviour
-    _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
-      if (_pageIndex < 3) {
-        _pageIndex++;
-      } else {
-        _pageIndex = 0;
-      }
 
-      _pageController.animateToPage(
-        _pageIndex,
-        duration: const Duration(milliseconds: 350),
-        curve: Curves.easeIn,
-      );
-    });
   }
 
   @override
   void dispose() {
     // Dispose everything
     _pageController.dispose();
-    _timer!.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    bool isSignInPageVisited = false;
     // OnBoarding content list
     final List<OnBoard> demoData = [
       OnBoard(
@@ -122,7 +107,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ...List.generate(
                     demoData.length,
                         (index) => Padding(
-                      padding: const EdgeInsets.only(right: 5),
+                      padding:  EdgeInsets.only(right: 5.w),
                       child: DotIndicator(
                         isActive: index == _pageIndex,
                       ),
@@ -131,11 +116,23 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ],
               ),
               // White space
-              verticalSpacing(120),
+              verticalSpacing(50),
               // Button area
               InkWell(
                 onTap: () {
-                  print("Button clicked!");
+                  if (_pageIndex < demoData.length - 1) {
+                    // Navigate to the next page
+                    _pageController.nextPage(
+                      duration: const Duration(milliseconds: 350),
+                      curve: Curves.easeIn,
+                    );
+                  } else {
+                    // Navigate to the sign-in page only if not already visited
+                    if (!isSignInPageVisited) {
+                      context.pushReplacementNamed('/signInScreen');
+                      isSignInPageVisited = true;
+                    }
+                  }
                 },
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 48),
@@ -169,7 +166,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: GestureDetector(
             onTap: () {
               // Handle skip action
-              print("Skip clicked!");
+             context.pushReplacementNamed('/signInScreen');
             },
             child: Text(
               S.of(context).skip,
@@ -188,7 +185,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 }
 
 // OnBoarding area widget
-class OnBoardContent extends StatelessWidget {
+class OnBoardContent extends StatefulWidget {
   OnBoardContent({
     super.key,
     required this.image,
@@ -201,14 +198,19 @@ class OnBoardContent extends StatelessWidget {
   String description;
 
   @override
+  State<OnBoardContent> createState() => _OnBoardContentState();
+}
+
+class _OnBoardContentState extends State<OnBoardContent> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         verticalSpacing(100),
-        Image.asset(image),
+        Image.asset(widget.image),
        verticalSpacing(15),
         Text(
-          title,
+          widget.title,
           style: const TextStyle(
             color: ColorsManager.mainBlack,
             fontSize: 23,
@@ -221,7 +223,7 @@ class OnBoardContent extends StatelessWidget {
           padding:  EdgeInsets.only(left: 20.w,right: 20.w),
           child: Text(
 
-            description,
+            widget.description,
             textAlign: TextAlign.center,
             style:  TextStyle(
               fontFamily: "Poppins",
@@ -251,7 +253,8 @@ class DotIndicator extends StatelessWidget {
       height: 10.h,
       width: 10.w,
       decoration: BoxDecoration(
-        color: isActive ? ColorsManager.mainBlue : ColorsManager.grey.withOpacity(0.4),
+        color: isActive ? ColorsManager.mainBlue
+             : ColorsManager.grey.withOpacity(0.4),
         borderRadius: const BorderRadius.all(
           Radius.circular(12),
         ),

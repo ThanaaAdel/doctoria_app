@@ -1,20 +1,17 @@
+import 'package:doctoria_app/core/helper/extentions.dart';
 import 'package:doctoria_app/core/theming/colors.dart';
-import 'package:doctoria_app/features/on_boarding_screen/presentation/screens/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../../../core/theming/image_manager.dart';
 
-class Splash extends StatelessWidget {
-  const Splash({Key? key}) : super(key: key);
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const OnBoardingScreen()),
-      );
+      context.pushNamed('/onBoardingScreen');
     });
     return Scaffold(
       body: Stack(

@@ -16,7 +16,6 @@ class DoctorIaApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
-
         locale: const Locale('en'),
         localizationsDelegates: const [
           S.delegate,
@@ -31,7 +30,7 @@ class DoctorIaApp extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.onBoardingScreen,
+        initialRoute: Routes.homeScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
