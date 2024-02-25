@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "book_your_date":
             MessageLookupByLibrary.simpleMessage("Book Your date"),
+        "category": MessageLookupByLibrary.simpleMessage("Category"),
         "change_number": MessageLookupByLibrary.simpleMessage("Change number"),
         "choose_a_doctor":
             MessageLookupByLibrary.simpleMessage("Choose a Doctor"),
@@ -42,24 +43,35 @@ class MessageLookup extends MessageLookupByLibrary {
         "find_a_doctor": MessageLookupByLibrary.simpleMessage("Find a doctor"),
         "forget_password":
             MessageLookupByLibrary.simpleMessage("Forget Password"),
+        "general_consultation":
+            MessageLookupByLibrary.simpleMessage("General\nconsultation"),
+        "home_car": MessageLookupByLibrary.simpleMessage("Home \nCar"),
         "intro_screen1": MessageLookupByLibrary.simpleMessage(
             "You can search for a doctor by specialty and the location you are in"),
         "intro_screen2": MessageLookupByLibrary.simpleMessage(
             "You can compare between doctors, according to the evaluation of other patients"),
         "intro_screen3": MessageLookupByLibrary.simpleMessage(
             "After choosing the doctor that suits you, you can book your appointment online"),
+        "medical_bag": MessageLookupByLibrary.simpleMessage("medical\nBag"),
+        "medical_file": MessageLookupByLibrary.simpleMessage("Medical \nfile"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "popular_doctors":
+            MessageLookupByLibrary.simpleMessage("Popular Doctors"),
         "referral_code": MessageLookupByLibrary.simpleMessage("Referral Code"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
         "reset_via_sms": MessageLookupByLibrary.simpleMessage("Reset Via SMS"),
         "reset_via_whatsapp":
             MessageLookupByLibrary.simpleMessage("Reset Via Whatsapp"),
+        "see_all": MessageLookupByLibrary.simpleMessage("See All"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "specialized_consultation":
+            MessageLookupByLibrary.simpleMessage("Specialized\nconsultation"),
         "start_now": MessageLookupByLibrary.simpleMessage("Start Now"),
         "text_congratulations": MessageLookupByLibrary.simpleMessage(
             "Your account is ready to use, you will be redirected to the Home page in a few Seconds..."),

@@ -23,50 +23,61 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "book_your_date": MessageLookupByLibrary.simpleMessage("احجز موعدك"),
+        "category": MessageLookupByLibrary.simpleMessage("الفئة"),
         "change_number": MessageLookupByLibrary.simpleMessage("تغيير الرقم"),
-        "choose_a_doctor": MessageLookupByLibrary.simpleMessage("اختر طبيب"),
+        "choose_a_doctor": MessageLookupByLibrary.simpleMessage("اختيار طبيب"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
-        "congratulations": MessageLookupByLibrary.simpleMessage("مبروك!"),
-        "continue_button": MessageLookupByLibrary.simpleMessage("استمر"),
+        "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
+        "continue_button": MessageLookupByLibrary.simpleMessage("استمرار"),
         "create_new_password":
             MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
         "description_text_verification_screen":
             MessageLookupByLibrary.simpleMessage(
-                "الرمز المكون من 4 أرقام الذي أرسلناه عبر رقم الهاتف"),
+                "أدخل الرمز المكون من 4 أرقام الذي أرسلناه عبر رقم الهاتف."),
         "do_not_have_account":
-            MessageLookupByLibrary.simpleMessage("ليس لديك حساب ؟ "),
-        "find_a_doctor": MessageLookupByLibrary.simpleMessage("ابحث عن طبيب"),
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "find_a_doctor": MessageLookupByLibrary.simpleMessage("البحث عن طبيب"),
         "forget_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "general_consultation":
+            MessageLookupByLibrary.simpleMessage("استشارة عامة"),
+        "home_car": MessageLookupByLibrary.simpleMessage("الرعاية المنزلية"),
         "intro_screen1": MessageLookupByLibrary.simpleMessage(
             "يمكنك البحث عن طبيب حسب التخصص والموقع الذي تتواجد فيه"),
         "intro_screen2": MessageLookupByLibrary.simpleMessage(
-            "يمكنك مقارنة بين الأطباء، وفقًا لتقييم المرضى الآخرين"),
+            "يمكنك مقارنة بين الأطباء وفقًا لتقييم المرضى الآخرين"),
         "intro_screen3": MessageLookupByLibrary.simpleMessage(
             "بعد اختيار الطبيب الذي يناسبك، يمكنك حجز موعدك عبر الإنترنت"),
+        "medical_bag": MessageLookupByLibrary.simpleMessage("الحقيبة الطبية"),
+        "medical_file": MessageLookupByLibrary.simpleMessage("الملف الطبي"),
+        "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
-        "referral_code": MessageLookupByLibrary.simpleMessage("كود الإحالة"),
+        "popular_doctors":
+            MessageLookupByLibrary.simpleMessage("الأطباء الشهيرين"),
+        "referral_code": MessageLookupByLibrary.simpleMessage("رمز الإحالة"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "reset_via_sms": MessageLookupByLibrary.simpleMessage(
-            "إعادة تعيين عبر الرسائل النصية"),
+            "إعادة التعيين عبر الرسائل القصيرة"),
         "reset_via_whatsapp":
-            MessageLookupByLibrary.simpleMessage("إعادة تعيين عبر الواتساب"),
+            MessageLookupByLibrary.simpleMessage("إعادة التعيين عبر واتساب"),
+        "see_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("التسجيل"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+        "specialized_consultation":
+            MessageLookupByLibrary.simpleMessage("استشارة متخصصة"),
         "start_now": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "text_congratulations": MessageLookupByLibrary.simpleMessage(
-            "حسابك جاهز للاستخدام، سيتم توجيهك إلى الصفحة الرئيسية في بضع ثوانٍ..."),
-        "text_create_new_password_page":
-            MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
+            "حسابك جاهز للاستخدام، ستتم إعادة توجيهك إلى الصفحة الرئيسية في بضع ثوانٍ..."),
+        "text_create_new_password_page": MessageLookupByLibrary.simpleMessage(
+            "أنشئ كلمة المرور الجديدة الخاصة بك"),
         "text_sign_in":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول إلى حسابك"),
-        "text_sign_up":
-            MessageLookupByLibrary.simpleMessage("التسجيل في حسابك"),
+        "text_sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "text_verification_Screen":
             MessageLookupByLibrary.simpleMessage("أدخل رمز التحقق"),
         "verification": MessageLookupByLibrary.simpleMessage("التحقق")

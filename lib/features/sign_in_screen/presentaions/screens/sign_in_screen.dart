@@ -27,31 +27,29 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           AppBarWidget(text: S.of(context).sign_in),
           Padding(
             padding:  EdgeInsets.only(left: 20.w,right: 20.w),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  verticalSpacing(40),
-                  Image.asset(ImageManager.firstLetterFromDoctorIa),
-                  verticalSpacing(20),
-                  Text(S.of(context).text_sign_in, style: TextStyles.font22Black600),
-                  verticalSpacing(40),
-                  phoneAndPasswordTextFieldSignIn(),
-                  verticalSpacing(20),
-                  AppTextButton(
-                      buttonHeight: 67.h,
-                      textButton: S.of(context).sign_in,onPressed: (){
-                    validateThenDoLogin(context);
-                  },textStyle: TextStyles.font19White600),
-                  verticalSpacing(80),
-                  doNotHaveAccount(context),
-                  const SignInBlocListener(),
-                ]),
-            ),
+            child: Column(
+              children: [
+                verticalSpacing(40),
+                Image.asset(ImageManager.firstLetterFromDoctorIa),
+                verticalSpacing(20),
+                Text(S.of(context).text_sign_in, style: TextStyles.font22Black600),
+                verticalSpacing(40),
+                phoneAndPasswordTextFieldSignIn(),
+                verticalSpacing(20),
+                AppTextButton(
+                    buttonHeight: 67.h,
+                    textButton: S.of(context).sign_in,onPressed: (){
+                  validateThenDoLogin(context);
+                },textStyle: TextStyles.font19White600),
+                verticalSpacing(80),
+                doNotHaveAccount(context),
+                const SignInBlocListener(),
+              ]),
           ),
         ],
       )

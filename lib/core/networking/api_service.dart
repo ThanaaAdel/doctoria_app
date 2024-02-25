@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:doctoria_app/features/sign_in_screen/data/models/api_patient_response_sign_in.dart';
+import '../../features/home_screen/data/models/slider_model/slider_model.dart';
 import '../../features/sign_in_screen/data/models/sign_in_request_body.dart';
 import 'api_constant.dart';
 import 'package:retrofit/retrofit.dart';
@@ -13,6 +14,9 @@ abstract class ApiService {
   Future<PatientResponseBody> login(
       @Body() SignInRequestBody loginRequestBody,
       );
+  @GET(ApiConstant.homeSlider)
+  @FormUrlEncoded()
+  Future<SliderModel> homeSliderData();
   // @POST(ApiConstant.register)
   // @FormUrlEncoded()
   // Future<ApiResponse> register(

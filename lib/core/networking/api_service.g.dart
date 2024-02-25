@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://127.0.0.1:8000/api/';
+    baseUrl ??= 'https://doctoria.thetailorsweb.com/api/';
   }
 
   final Dio _dio;
@@ -36,7 +36,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'patient/auth/login',
+              'auth/login',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -46,6 +46,34 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = PatientResponseBody.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<SliderModel> homeSliderData() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<SliderModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              'settings/sliders',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = SliderModel.fromJson(_result.data!);
     return value;
   }
 

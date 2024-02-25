@@ -359,6 +359,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Category`
+  String get category {
+    return Intl.message(
+      'Category',
+      name: 'category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See All`
+  String get see_all {
+    return Intl.message(
+      'See All',
+      name: 'see_all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General\nconsultation`
+  String get general_consultation {
+    return Intl.message(
+      'General\nconsultation',
+      name: 'general_consultation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Specialized\nconsultation`
+  String get specialized_consultation {
+    return Intl.message(
+      'Specialized\nconsultation',
+      name: 'specialized_consultation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `medical\nBag`
+  String get medical_bag {
+    return Intl.message(
+      'medical\nBag',
+      name: 'medical_bag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medical \nfile`
+  String get medical_file {
+    return Intl.message(
+      'Medical \nfile',
+      name: 'medical_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home \nCar`
+  String get home_car {
+    return Intl.message(
+      'Home \nCar',
+      name: 'home_car',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More`
+  String get more {
+    return Intl.message(
+      'More',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Doctors`
+  String get popular_doctors {
+    return Intl.message(
+      'Popular Doctors',
+      name: 'popular_doctors',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

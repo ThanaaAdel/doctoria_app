@@ -14,7 +14,8 @@ class SignInCubit extends Cubit<SignInState>{
   void emitSignInStates() async {
     emit(const SignInState.loading());
     final response = await signInRepo.login(
-      SignInRequestBody(phone: phoneController.text,
+      SignInRequestBody(
+          phone: phoneController.text,
           password: passwordController.text)
     );
     response.when(success: (signInResponse){

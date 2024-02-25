@@ -14,5 +14,12 @@ class ImageManager {
  static const doctoriaText = "assets/images/doctoria_text.png";
  static const notificationIcon = "assets/images/notification.png";
  static const imageHome = "assets/images/Image_home.png";
+ static const generalConsultationIcon ="assets/images/Generalconsultation.png";
+ static const homeCarIcon = "assets/images/home_car.png";
+ static const medicalBagIcon = "assets/images/medicalBag.png";
+ static const medicalFileIcon = "assets/images/Medicalfile.png";
+ static const moreIcon ="assets/images/more.png";
+ static const notFoundIcon = "assets/images/not_found_icon.png";
+ static const specializedConsultationIcon = "assets/images/Specializedconsultation.png";
 
 }

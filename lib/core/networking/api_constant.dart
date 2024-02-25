@@ -1,8 +1,8 @@
 class ApiConstant {
- static const String apiBaseUrl = "http://127.0.0.1:8000/api/";
- static const String login = "patient/auth/login";
- static const String signUp = "patient/auth/signup";
- static const String logout = "patient/auth/logout";
+ static const String apiBaseUrl = "https://doctoria.thetailorsweb.com/api/";
+ static const String login = "auth/login";
+ static const String signUp = "auth/signup";
+ static const String logout = "auth/logout";
  static const String homeSlider ="settings/sliders";
  static const String specializationPopularDoctors = "settings/specialization_popular_doctors";
 }

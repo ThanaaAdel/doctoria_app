@@ -29,5 +29,16 @@
   "create_new_password": "Create new password",
   "text_create_new_password_page": "Create Your New Password",
   "congratulations": "Congratulations!",
-  "text_congratulations": "Your account is ready to use, you will be redirected to the Home page in a few Seconds..."
+  "text_congratulations": "Your account is ready to use, you will be redirected to the Home page in a few Seconds...",
+  "category": "Category",
+  "see_all": "See All",
+  "general_consultation": "General\nconsultation",
+  "specialized_consultation": "Specialized\nconsultation",
+  "medical_bag": "medical\nBag",
+  "medical_file": "Medical \nfile",
+  "home_car": "Home \nCar",
+  "more": "More",
+  "popular_doctors": "Popular Doctors"
+
+
 }

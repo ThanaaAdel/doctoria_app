@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:doctoria_app/features/home_screen/data/repos/home_slider_repo.dart';
+import 'package:doctoria_app/features/home_screen/logic/cubits/slider_cubit.dart';
 import 'package:doctoria_app/features/sign_in_screen/data/repos/sign_in_repo.dart';
 import 'package:doctoria_app/features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
 import 'package:get_it/get_it.dart';
@@ -12,6 +14,9 @@ final getIt = GetIt.instance;
   //login
   getIt.registerLazySingleton<SignInRepo>(() => SignInRepo(getIt()));
   getIt.registerFactory<SignInCubit>(() => SignInCubit(getIt()));
+  //slider
+  getIt.registerLazySingleton<SliderRepo>(() => SliderRepo(getIt()));
+  getIt.registerFactory<SliderCubit>(() => SliderCubit(getIt()));
   // //register
   // getIt.registerLazySingleton<RegisterRepo>(() => RegisterRepo(getIt()));
   // getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));

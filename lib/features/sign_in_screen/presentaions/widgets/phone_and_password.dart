@@ -37,26 +37,26 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
         key: context.read<SignInCubit>().formKey,
         child: Column(
           children: [
-            // AppTextFormField(
-            //   controller:  context.read<SignInCubit>().phoneController,
-            //   contentPadding: EdgeInsets.only(top: 25.h, bottom: 25.h,right: 22.w,left: 22.w),
-            //   textInputType: TextInputType.number,
-            //   hintText: S.of(context).phone_number,
-            //   validator: (value) {
-            //     if (value == null || value.isEmpty) {
-            //       return 'Please enter a valid phone';
-            //     }
-            //   },
-            // ),
-            IntlPhoneField(
+            AppTextFormField(
               controller:  context.read<SignInCubit>().phoneController,
-              decoration: decorationFromPhoneField(),
-              initialCountryCode: 'IN',
-
-              onChanged: (phone) {
-                print(phone.completeNumber);
+              contentPadding: EdgeInsets.only(top: 25.h, bottom: 25.h,right: 22.w,left: 22.w),
+              textInputType: TextInputType.number,
+              hintText: S.of(context).phone_number,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter a valid phone';
+                }
               },
             ),
+            // IntlPhoneField(
+            //   controller:  context.read<SignInCubit>().phoneController,
+            //   decoration: decorationFromPhoneField(),
+            //   initialCountryCode: 'IN',
+            //
+            //   onChanged: (phone) {
+            //     print(phone.completeNumber);
+            //   },
+            // ),
             verticalSpacing(20),
             AppTextFormField(
               controller:  context.read<SignInCubit>().passwordController,

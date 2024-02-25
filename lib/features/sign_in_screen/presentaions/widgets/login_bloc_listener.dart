@@ -23,17 +23,20 @@ class _SignInBlocListenerState extends State<SignInBlocListener> {
       child: const SizedBox.shrink(),
       listenWhen: (previous, current) => current is Loading || current is Success || current is Error,
       listener: (context, state) {
-      state.whenOrNull(loading: (){
+      state.whenOrNull(
+          loading: (){
         showDialog(context: context, builder:
         (context) => const Center(child: CircularProgressIndicator(
           color: ColorsManager.mainBlue,
         ),),
         );
-      }, success: (loginResponse){
+      },
+          success: (loginResponse){
         parentData = loginResponse;
         context.pop();
         context.pushNamed(Routes.homeScreen,arguments: parentData);
-      }, error:(error){
+      },
+          error:(error){
 
         setupErrorState(context, error);
       } );
