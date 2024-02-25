@@ -1,4 +1,4 @@
-import 'package:doctoria_app/core/theming/colors.dart';
+import '../../../../core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/shared_widgets/app_elevated_button.dart';

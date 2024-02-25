@@ -1,7 +1,7 @@
 
-import 'package:doctoria_app/core/helper/extentions.dart';
-import 'package:doctoria_app/core/theming/colors.dart';
-import 'package:doctoria_app/core/theming/media_query_helper.dart';
+import '../../../../core/helper/extentions.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/media_query_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/image_manager.dart';

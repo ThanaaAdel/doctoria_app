@@ -1,4 +1,4 @@
-import 'package:doctoria_app/core/theming/spacing.dart';
+import '../../../../core/theming/spacing.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/shared_widgets/row_label_and_any_widget.dart';
 import '../../../../core/theming/styles.dart';

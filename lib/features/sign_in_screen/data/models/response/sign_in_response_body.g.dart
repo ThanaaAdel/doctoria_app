@@ -1,30 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'api_patient_response_sign_in.dart';
+part of 'sign_in_response_body.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PatientResponseBody _$PatientResponseBodyFromJson(Map<String, dynamic> json) =>
-    PatientResponseBody(
+SignInResponseBody _$SignInResponseBodyFromJson(Map<String, dynamic> json) =>
+    SignInResponseBody(
       data: json['data'] == null
           ? null
-          : Data.fromJson(json['data'] as Map<String, dynamic>),
+          : DataFromSignIn.fromJson(json['data'] as Map<String, dynamic>),
       message:
           (json['message'] as List<dynamic>?)?.map((e) => e as String).toList(),
       status: json['status'] as int?,
     );
 
-Map<String, dynamic> _$PatientResponseBodyToJson(
-        PatientResponseBody instance) =>
+Map<String, dynamic> _$SignInResponseBodyToJson(SignInResponseBody instance) =>
     <String, dynamic>{
       'data': instance.data,
       'message': instance.message,
       'status': instance.status,
     };
 
-Data _$DataFromJson(Map<String, dynamic> json) => Data(
+DataFromSignIn _$DataFromSignInFromJson(Map<String, dynamic> json) =>
+    DataFromSignIn(
       id: json['id'] as int?,
       name: json['name'] as String?,
       email: json['email'] as String?,
@@ -37,7 +37,8 @@ Data _$DataFromJson(Map<String, dynamic> json) => Data(
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+Map<String, dynamic> _$DataFromSignInToJson(DataFromSignIn instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'email': instance.email,

@@ -1,8 +1,8 @@
-import 'package:doctoria_app/core/helper/extentions.dart';
+import '../../logic/sign_up/sign_up_cubit.dart';
+import '../widgets/sign_up_text_form_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-
 import '../../../../core/shared_widgets/app_elevated_button.dart';
 import '../../../../core/shared_widgets/app_text_feild.dart';
 import '../../../../core/shared_widgets/appbar_widget.dart';
@@ -11,6 +11,7 @@ import '../../../../core/theming/image_manager.dart';
 import '../../../../core/theming/spacing.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../generated/l10n.dart';
+import '../widgets/sign_up_bloc_listener.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -22,106 +23,53 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    bool isPasswordVisible = false;
 
-   
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            AppBarWidget(text: S.of(context).sign_up),
-            Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 20.w),
-              child: Column(
-                  children: [
-                verticalSpacing(40),
-                Image.asset(ImageManager.firstLetterFromDoctorIa),
-                verticalSpacing(10),
-                Text(S.of(context).text_sign_up, style: TextStyles.font22Black600),
-                verticalSpacing(20),
-                textFieldFromSignUp(decorationFromPhoneField, isPasswordVisible, context),
-                verticalSpacing(50),
-                    AppTextButton(
-                    buttonHeight: 67.h,
-                    textButton: S.of(context).continue_button,
-                    onPressed: () {
-                      context.pushNamed('/resetPasswordScreen');
-                    },
-                    textStyle: TextStyles.font19White600),
-                    verticalSpacing(10),
-              ]),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [
+          AppBarWidget(text: S.of(context).sign_up),
+          Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            child: Column(children: [
+              verticalSpacing(40),
+              Image.asset(ImageManager.firstLetterFromDoctorIa),
+              verticalSpacing(10),
+              Text(S.of(context).text_sign_up,
+                  style: TextStyles.font22Black600),
+              verticalSpacing(20),
+             const SignUpTextFormFields(),
+              verticalSpacing(50),
+              AppTextButton(
+                  buttonHeight: 67.h,
+                  textButton: S.of(context).continue_button,
+                  onPressed: (){
+                    validateThenDoSignUp(context);
+                  },
+                  textStyle: TextStyles.font19White600),
+              const SignUpBlocListener(),
+            ]),
+          ),
+        ],
       ),
     );
   }
 
-  Column textFieldFromSignUp(InputDecoration Function() decorationFromPhoneField, bool isPasswordVisible, BuildContext context) {
-    return Column(
-          children: [
-            IntlPhoneField(
-              decoration: decorationFromPhoneField(),
-              initialCountryCode: 'IN',
-              onChanged: (phone) {
-                print(phone.completeNumber);
-              },
-            ),
-            verticalSpacing(10),
-            AppTextFormField(
+  void validateThenDoSignUp(BuildContext context) {
+    if (context.read<SignUpCubit>().formKey.currentState!.validate()) {
+      context.read<SignUpCubit>().emitSignUpStates();
 
-              prefixIcon: Image.asset(ImageManager.lockImage),
-              textInputType: TextInputType.visiblePassword,
-              obscureText: !isPasswordVisible,
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    isPasswordVisible = !isPasswordVisible;
-                  });
-                },
-                child: Icon(
-                  isPasswordVisible
-                      ? Icons.visibility_outlined
-                      : Icons.visibility_off_outlined,
-                  size: 22,
-                ),
-              ),
-              hintText: S.of(context).password,
-              validator: (p0) {},
-            ),
-            verticalSpacing(20),
-            AppTextFormField(
-
-              prefixIcon: Image.asset(ImageManager.lockImage),
-              textInputType: TextInputType.visiblePassword,
-              obscureText: !isPasswordVisible,
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    isPasswordVisible = !isPasswordVisible;
-                  });
-                },
-                child: Icon(
-                  isPasswordVisible
-                      ? Icons.visibility_outlined
-                      : Icons.visibility_off_outlined,
-                  size: 22,
-                ),
-              ),
-              hintText: S.of(context).confirm_password,
-              validator: (p0) {},
-            ),
-            verticalSpacing(20),
-            AppTextFormField(
-
-              hintText: S.of(context).referral_code,
-              validator: (p0) {},
-            ),
-            verticalSpacing(20),
-          ],
-        );
+      setState(() {
+        context.read<SignUpCubit>().phoneController.clear();
+        context.read<SignUpCubit>().passwordController.clear();
+        context.read<SignUpCubit>().confirmPasswordController.clear();
+        context.read<SignUpCubit>().referCodeController.clear();
+      });
+    }
   }
+
+
+
   InputDecoration decorationFromPhoneField() {
     return InputDecoration(
       labelText: S.of(context).phone_number,

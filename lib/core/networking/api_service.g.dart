@@ -21,14 +21,14 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<PatientResponseBody> login(SignInRequestBody loginRequestBody) async {
+  Future<SignInResponseBody> login(SignInRequestBody loginRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(loginRequestBody.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<PatientResponseBody>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<SignInResponseBody>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -45,7 +45,36 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PatientResponseBody.fromJson(_result.data!);
+    final value = SignInResponseBody.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<SignUpResponseBody> signUp(SignUpRequestBody signUpRequestBody) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(signUpRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<SignUpResponseBody>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              'auth/signup',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = SignUpResponseBody.fromJson(_result.data!);
     return value;
   }
 

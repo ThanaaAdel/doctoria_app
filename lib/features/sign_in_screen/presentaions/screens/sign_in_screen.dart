@@ -1,8 +1,8 @@
-import 'package:doctoria_app/core/helper/extentions.dart';
-import 'package:doctoria_app/core/theming/colors.dart';
-import 'package:doctoria_app/features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
-import 'package:doctoria_app/features/sign_in_screen/presentaions/widgets/login_bloc_listener.dart';
-import 'package:doctoria_app/features/sign_in_screen/presentaions/widgets/phone_and_password.dart';
+import '../../../../core/helper/extentions.dart';
+import '../../../../core/theming/colors.dart';
+import '../../logic/sign_in/sign_in_cubit.dart';
+import '../widgets/login_bloc_listener.dart';
+import '../widgets/phone_and_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,8 +21,6 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  bool isPasswordVisible = false;
-  late String phoneNumber = '';
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 verticalSpacing(20),
                 AppTextButton(
                     buttonHeight: 67.h,
-                    textButton: S.of(context).sign_in,onPressed: (){
+                    textButton: S.of(context).sign_in,
+                    onPressed: (){
                   validateThenDoLogin(context);
                 },textStyle: TextStyles.font19White600),
                 verticalSpacing(80),

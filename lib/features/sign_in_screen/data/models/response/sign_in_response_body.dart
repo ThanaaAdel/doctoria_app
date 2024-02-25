@@ -1,17 +1,17 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'api_patient_response_sign_in.g.dart';
+part 'sign_in_response_body.g.dart';
 @JsonSerializable()
-class PatientResponseBody {
-  Data? data;
+class SignInResponseBody {
+  DataFromSignIn? data;
   List<String>? message;
   int? status;
 
-  PatientResponseBody({this.data, this.message, this.status});
-  factory PatientResponseBody.fromJson(Map<String, dynamic> json) => _$PatientResponseBodyFromJson(json);
-  Map<String, dynamic> toJson() => _$PatientResponseBodyToJson(this);
+  SignInResponseBody({this.data, this.message, this.status});
+  factory SignInResponseBody.fromJson(Map<String, dynamic> json) => _$SignInResponseBodyFromJson(json);
+  Map<String, dynamic> toJson() => _$SignInResponseBodyToJson(this);
 }
 @JsonSerializable()
-class Data {
+class DataFromSignIn {
   int? id;
   String? name;
   String? email;
@@ -24,7 +24,7 @@ class Data {
   String? address;
   String? token;
 
-  Data(
+  DataFromSignIn(
       {this.id,
         this.name,
         this.email,
@@ -35,7 +35,7 @@ class Data {
         this.referCode,
         this.address,
         this.token});
-  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  factory DataFromSignIn.fromJson(Map<String, dynamic> json) => _$DataFromSignInFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DataToJson(this);
+  Map<String, dynamic> toJson() => _$DataFromSignInToJson(this);
 }

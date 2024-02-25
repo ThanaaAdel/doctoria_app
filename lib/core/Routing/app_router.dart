@@ -1,11 +1,13 @@
-import 'package:doctoria_app/features/create_new_password_screen/presentions/screens/create_new_password_screen.dart';
-import 'package:doctoria_app/features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
-import 'package:doctoria_app/features/sign_in_screen/presentaions/screens/sign_in_screen.dart';
-import 'package:doctoria_app/features/sign_up_screen/presentaions/screens/sign_up_screen.dart';
-import 'package:doctoria_app/features/splash_screen/presentaions/screens/spash_screen.dart';
-import 'package:doctoria_app/features/verification_screen/presentaions/screens/verification_screen.dart';
+import '../../features/create_new_password_screen/presentions/screens/create_new_password_screen.dart';
+import '../../features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
+import '../../features/sign_in_screen/presentaions/screens/sign_in_screen.dart';
+import '../../features/sign_up_screen/logic/sign_up/sign_up_cubit.dart';
+import '../../features/sign_up_screen/presentaions/screens/sign_up_screen.dart';
+import '../../features/splash_screen/presentaions/screens/spash_screen.dart';
+import '../../features/verification_screen/presentaions/screens/verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/home_screen/logic/cubits/slider_cubit.dart';
 import '../../features/home_screen/presentations/screens/home_screen.dart';
 import '../../features/on_boarding_screen/presentation/screens/on_boarding_screen.dart';
 import '../../features/reset_password/presentions/screens/reset_password_screen.dart';
@@ -19,19 +21,25 @@ Route generateRoute(RouteSettings settings){
     case Routes.onBoardingScreen:
       return MaterialPageRoute(builder: (context) => const OnBoardingScreen(),);
     case Routes.signUpScreen:
-      return MaterialPageRoute(builder: (context) => const SignUpScreen(),);
+      return MaterialPageRoute(builder: (context) => BlocProvider(
+          create: (context) => getIt<SignUpCubit>(),
+          child: const SignUpScreen()),);
+    case Routes.signInScreen:
+      return MaterialPageRoute(builder: (context) => BlocProvider(
+          create: (context) => getIt<SignInCubit>(),
+          child: const SignInScreen()),);
     case Routes.resetPasswordScreen:
       return MaterialPageRoute(builder: (context) => const ResetPasswordScreen(),);
     case Routes.createNewPassword:
       return MaterialPageRoute(builder: (context) => const CreateNewPasswordScreen(),);
     case Routes.verificationScreen:
       return MaterialPageRoute(builder: (context) => const VerificationScreen(phoneNumber: '01026267450',),);
-    case Routes.signInScreen:
-      return MaterialPageRoute(builder: (context) => BlocProvider(
-          create: (context) => getIt<SignInCubit>(),
-          child: const SignInScreen()),);
+
+
     case Routes.homeScreen:
-      return MaterialPageRoute(builder: (context) => const HomeScreen(),);
+      return MaterialPageRoute(builder: (context) => BlocProvider(
+          create: (context) => getIt<SliderCubit>(),
+          child: const HomeScreen()),);
     // case Routes.registerScreen:
     //   return MaterialPageRoute(builder: (context) => BlocProvider(
     //       create: (context) => getIt<RegisterCubit>(),

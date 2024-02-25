@@ -1,12 +1,12 @@
-import 'package:doctoria_app/features/sign_in_screen/data/models/api_patient_response_sign_in.dart';
-import 'package:doctoria_app/features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
-import 'package:doctoria_app/features/sign_in_screen/logic/sign_in/sign_in_state.dart';
+import '../../logic/sign_in/sign_in_cubit.dart';
+import '../../logic/sign_in/sign_in_state.dart';
 import '../../../../../core/Routing/routers.dart';
 import '../../../../../core/helper/extentions.dart';
 import '../../../../../core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/theming/styles.dart';
+import '../../data/models/response/sign_in_response_body.dart';
 class SignInBlocListener extends StatefulWidget {
   const SignInBlocListener({super.key});
 
@@ -15,7 +15,7 @@ class SignInBlocListener extends StatefulWidget {
 }
 
 class _SignInBlocListenerState extends State<SignInBlocListener> {
-  late PatientResponseBody parentData;
+  late SignInResponseBody signInResponseBody;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +32,10 @@ class _SignInBlocListenerState extends State<SignInBlocListener> {
         );
       },
           success: (loginResponse){
-        parentData = loginResponse;
+            signInResponseBody = loginResponse;
+
         context.pop();
-        context.pushNamed(Routes.homeScreen,arguments: parentData);
+        context.pushNamed(Routes.homeScreen,arguments: signInResponseBody);
       },
           error:(error){
 

@@ -1,4 +1,4 @@
-import 'package:doctoria_app/generated/l10n.dart';
+import 'generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:klocalizations_flutter/klocalizations_flutter.dart';
@@ -30,7 +30,7 @@ class DoctorIaApp extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.homeScreen,
+        initialRoute: Routes.signUpScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

@@ -1,6 +1,6 @@
-import 'package:doctoria_app/core/theming/colors.dart';
-import 'package:doctoria_app/core/theming/media_query_helper.dart';
-import 'package:doctoria_app/core/theming/spacing.dart';
+import '../../../../core/theming/colors.dart';
+import '../../../../core/theming/media_query_helper.dart';
+import '../../../../core/theming/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

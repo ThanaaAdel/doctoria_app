@@ -1,4 +1,4 @@
-import 'package:doctoria_app/core/helper/extentions.dart';
+import '../helper/extentions.dart';
 import 'package:flutter/material.dart';
 import '../theming/colors.dart';
 import '../theming/styles.dart';

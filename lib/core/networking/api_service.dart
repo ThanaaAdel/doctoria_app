@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart' hide Headers;
-import 'package:doctoria_app/features/sign_in_screen/data/models/api_patient_response_sign_in.dart';
+import '../../features/sign_up_screen/data/models/request_body/sign_up_request_body.dart';
+import '../../features/sign_up_screen/data/models/response_body/sign_up_response_data_model.dart';
 import '../../features/home_screen/data/models/slider_model/slider_model.dart';
-import '../../features/sign_in_screen/data/models/sign_in_request_body.dart';
+import '../../features/sign_in_screen/data/models/request/sign_in_request_body.dart';
+import '../../features/sign_in_screen/data/models/response/sign_in_response_body.dart';
 import 'api_constant.dart';
 import 'package:retrofit/retrofit.dart';
 part 'api_service.g.dart';
@@ -11,8 +13,13 @@ abstract class ApiService {
 
   @POST(ApiConstant.login)
   @FormUrlEncoded()
-  Future<PatientResponseBody> login(
+  Future<SignInResponseBody> login(
       @Body() SignInRequestBody loginRequestBody,
+      );
+  @POST(ApiConstant.signUp)
+  @FormUrlEncoded()
+  Future<SignUpResponseBody> signUp(
+      @Body() SignUpRequestBody signUpRequestBody,
       );
   @GET(ApiConstant.homeSlider)
   @FormUrlEncoded()

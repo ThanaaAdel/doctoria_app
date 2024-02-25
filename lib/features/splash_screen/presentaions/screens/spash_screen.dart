@@ -1,5 +1,5 @@
-import 'package:doctoria_app/core/helper/extentions.dart';
-import 'package:doctoria_app/core/theming/colors.dart';
+import '../../../../core/helper/extentions.dart';
+import '../../../../core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
