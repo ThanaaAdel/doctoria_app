@@ -39,6 +39,7 @@ dependencies:
   flutter_local_notifications: ^16.3.0
   flutter_native_screenshot: ^1.1.2
   intl_phone_field: ^3.2.0
+  google_fonts: ^6.1.0
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   freezed: ^2.4.6

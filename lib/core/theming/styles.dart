@@ -32,6 +32,12 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     fontFamily: "Poppins",
   );
+  static TextStyle font12Blue500 = TextStyle(
+    color: ColorsManager.mainBlue,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: "Poppins",
+  );
   static TextStyle font19White600 = TextStyle(
       fontSize: 19.sp,
       fontFamily: "Poppins",

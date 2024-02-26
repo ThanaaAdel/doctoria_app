@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:doctoria_app/features/home_screen/data/repos/specialization_popular_doctors_repo/specialization_popular_doctors_repo.dart';
+import 'package:doctoria_app/features/home_screen/logic/cubits/specialization_popular_doctors_cubit/specialization_popular_doctors_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/home_screen/data/repos/home_slider_repo/home_slider_repo.dart';
@@ -23,5 +25,7 @@ final getIt = GetIt.instance;
   //signUp
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
-
+  //specializationPopularDoctors
+  getIt.registerLazySingleton<SpecializationPopularDoctorsRepo>(() => SpecializationPopularDoctorsRepo(getIt()));
+  getIt.registerFactory<SpecializationPopularDoctorsCubit>(() => SpecializationPopularDoctorsCubit(getIt()));
  }
