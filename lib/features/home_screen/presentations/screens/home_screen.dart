@@ -1,5 +1,5 @@
 
-import 'package:doctoria_app/features/home_screen/logic/cubits/specialization_popular_doctors_cubit/specialization_popular_doctors_cubit.dart';
+import '../../logic/cubits/specialization_popular_doctors_cubit/specialization_popular_doctors_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
