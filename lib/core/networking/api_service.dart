@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart' hide Headers;
+import '../../features/home_screen/data/models/specialization_popular_doctors_model/specialization_popular_doctors_model.dart';
 import '../../features/sign_up_screen/data/models/request_body/sign_up_request_body.dart';
 import '../../features/sign_up_screen/data/models/response_body/sign_up_response_data_model.dart';
 import '../../features/home_screen/data/models/slider_model/slider_model.dart';
@@ -11,27 +12,30 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
+  // signIn
   @POST(ApiConstant.login)
   @FormUrlEncoded()
   Future<SignInResponseBody> login(
       @Body() SignInRequestBody loginRequestBody,
       );
+
+  //signUp
   @POST(ApiConstant.signUp)
   @FormUrlEncoded()
   Future<SignUpResponseBody> signUp(
       @Body() SignUpRequestBody signUpRequestBody,
       );
+
+  // homeSlider data
   @GET(ApiConstant.homeSlider)
   @FormUrlEncoded()
   Future<SliderModel> homeSliderData();
-  // @POST(ApiConstant.register)
-  // @FormUrlEncoded()
-  // Future<ApiResponse> register(
-  //     @Body() RegisterRequestBody registerRequestBody,
-  //     );
-  // @POST(ApiConstant.logout)
-  // Future<ApiResponse> logout(
-  //     );
+
+  // specializationPopularDoctorsData
+  @GET(ApiConstant.specializationPopularDoctors)
+  @FormUrlEncoded()
+  Future<SpecializationPopularDoctorsModel> specializationPopularDoctorsData();
+
 }
 
 

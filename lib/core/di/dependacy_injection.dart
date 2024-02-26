@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
-import '../../features/home_screen/data/repos/home_slider_repo.dart';
-import '../../features/home_screen/logic/cubits/slider_cubit.dart';
+import 'package:get_it/get_it.dart';
+
+import '../../features/home_screen/data/repos/home_slider_repo/home_slider_repo.dart';
+import '../../features/home_screen/logic/cubits/slider_cubit/slider_cubit.dart';
 import '../../features/sign_in_screen/data/repos/sign_in_repo.dart';
 import '../../features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
 import '../../features/sign_up_screen/data/repos/sign_up_repo.dart';
 import '../../features/sign_up_screen/logic/sign_up/sign_up_cubit.dart';
-import 'package:get_it/get_it.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
 final getIt = GetIt.instance;

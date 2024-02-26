@@ -1,5 +1,6 @@
-import '../../data/repos/home_slider_repo.dart';
 import 'slider_cubit_states.dart';
+
+import '../../../data/repos/home_slider_repo/home_slider_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SliderCubit extends Cubit<SliderCubitStates> {

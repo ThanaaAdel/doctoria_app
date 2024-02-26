@@ -1,13 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../../core/theming/media_query_helper.dart';
+import '../../logic/cubits/slider_cubit/slider_cubit_states.dart';
 import 'slider_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../core/theming/colors.dart';
 import '../../data/models/slider_model/slider_model.dart';
-import '../../logic/cubits/slider_cubit.dart';
-import '../../logic/cubits/slider_cubit_states.dart';
+import '../../logic/cubits/slider_cubit/slider_cubit.dart';
 
 class SliderHomeScreenList extends StatefulWidget {
   const SliderHomeScreenList({super.key});
@@ -27,8 +26,8 @@ class _SliderHomeScreenListState extends State<SliderHomeScreenList> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: context.screenHeight * 0.02,
-        left: context.screenWidth * 0.02,
+        top: context.screenHeight * 0.01,
+
       ),
       child: Column(
         children: [

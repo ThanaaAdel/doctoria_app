@@ -7,7 +7,7 @@ import '../../features/splash_screen/presentaions/screens/spash_screen.dart';
 import '../../features/verification_screen/presentaions/screens/verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features/home_screen/logic/cubits/slider_cubit.dart';
+import '../../features/home_screen/logic/cubits/slider_cubit/slider_cubit.dart';
 import '../../features/home_screen/presentations/screens/home_screen.dart';
 import '../../features/on_boarding_screen/presentation/screens/on_boarding_screen.dart';
 import '../../features/reset_password/presentions/screens/reset_password_screen.dart';

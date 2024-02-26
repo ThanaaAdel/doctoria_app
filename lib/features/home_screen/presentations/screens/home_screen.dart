@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
                 theSecondWidget: TextButton(
                     onPressed: () {}, child: Text(S.of(context).see_all,style: TextStyles.font14Blue500,)),
               ),
-              verticalSpacing(5),
               const CategoriesSection(),
               RowLabelAndAnyWidget(
                 text: S.of(context).popular_doctors,
