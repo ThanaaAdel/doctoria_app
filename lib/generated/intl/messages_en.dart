@@ -22,16 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
+        "all": MessageLookupByLibrary.simpleMessage("All"),
+        "blood_group": MessageLookupByLibrary.simpleMessage("Blood Group"),
         "book_your_date":
             MessageLookupByLibrary.simpleMessage("Book Your date"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "change_number": MessageLookupByLibrary.simpleMessage("Change number"),
+        "check_up": MessageLookupByLibrary.simpleMessage("Check Up"),
         "choose_a_doctor":
             MessageLookupByLibrary.simpleMessage("Choose a Doctor"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations!"),
+        "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
         "continue_button": MessageLookupByLibrary.simpleMessage("Continue"),
         "create_new_password":
             MessageLookupByLibrary.simpleMessage("Create new password"),
@@ -40,11 +45,15 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter the 4-digit that we have sent via the phone number ."),
         "do_not_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
+        "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "find_a_doctor": MessageLookupByLibrary.simpleMessage("Find a doctor"),
         "forget_password":
             MessageLookupByLibrary.simpleMessage("Forget Password"),
         "general_consultation":
             MessageLookupByLibrary.simpleMessage("General\nconsultation"),
+        "heart_rate": MessageLookupByLibrary.simpleMessage("Heart Rate"),
+        "history": MessageLookupByLibrary.simpleMessage("History"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "home_car": MessageLookupByLibrary.simpleMessage("Home \nCar"),
         "intro_screen1": MessageLookupByLibrary.simpleMessage(
             "You can search for a doctor by specialty and the location you are in"),
@@ -52,15 +61,28 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can compare between doctors, according to the evaluation of other patients"),
         "intro_screen3": MessageLookupByLibrary.simpleMessage(
             "After choosing the doctor that suits you, you can book your appointment online"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "latest_reports":
+            MessageLookupByLibrary.simpleMessage("Latest Reports"),
         "medical_bag": MessageLookupByLibrary.simpleMessage("medical\nBag"),
         "medical_file": MessageLookupByLibrary.simpleMessage("Medical \nfile"),
+        "medical_file_profile":
+            MessageLookupByLibrary.simpleMessage("Medical File"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "not_found": MessageLookupByLibrary.simpleMessage("Not Found"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "popular_doctors":
             MessageLookupByLibrary.simpleMessage("Popular Doctors"),
+        "privacy_and_policy":
+            MessageLookupByLibrary.simpleMessage("Privacy And Policy"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "referral_code": MessageLookupByLibrary.simpleMessage("Referral Code"),
+        "relatives": MessageLookupByLibrary.simpleMessage("Relatives"),
+        "reports": MessageLookupByLibrary.simpleMessage("Reports"),
+        "reports_details":
+            MessageLookupByLibrary.simpleMessage("Reports Details"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
         "reset_via_sms": MessageLookupByLibrary.simpleMessage("Reset Via SMS"),
@@ -77,12 +99,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your account is ready to use, you will be redirected to the Home page in a few Seconds..."),
         "text_create_new_password_page":
             MessageLookupByLibrary.simpleMessage("Create Your New Password"),
+        "text_not_found": MessageLookupByLibrary.simpleMessage(
+            "Sorry, the keyword you entered cannot be found, please check again or search with another keyword."),
         "text_sign_in":
             MessageLookupByLibrary.simpleMessage("Login to your account"),
         "text_sign_up":
             MessageLookupByLibrary.simpleMessage("Sign up to your account"),
         "text_verification_Screen":
             MessageLookupByLibrary.simpleMessage("Enter Verification Code"),
-        "verification": MessageLookupByLibrary.simpleMessage("Verification")
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
+        "weight_report": MessageLookupByLibrary.simpleMessage("Weight")
       };
 }

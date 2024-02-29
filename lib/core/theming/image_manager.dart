@@ -21,5 +21,26 @@ class ImageManager {
  static const moreIcon ="assets/images/more.png";
  static const notFoundIcon = "assets/images/not_found_icon.png";
  static const specializedConsultationIcon = "assets/images/Specializedconsultation.png";
-
+ static const selectedHomeIcon = "assets/images/selected_home.png";
+ static const selectedHistoryIcon = "assets/images/selected_history.png";
+ static const selectedProfileIcon = "assets/images/selected_profile.png";
+ static const selectedReportsIcon = "assets/images/selected_reports.png";
+  static const unselectedHomeIcon = "assets/images/unselected_home.png";
+  static const unselectedHistoryIcon = "assets/images/unselected_history.png";
+  static const unselectedProfileIcon = "assets/images/unselected_profile.png";
+  static const unselectedReportsIcon = "assets/images/unselected_reports.png";
+  static const paragraphReportImage = "assets/images/image_paragrph.png";
+  static const bloodGroupReportsImage = "assets/images/blood_groub_reports.png";
+  static const weightReportsImage = "assets/images/weight_reports.png";
+  static const generalReportsIcons = "assets/images/general_Report.png";
+  static const profileImage = "assets/images/profile_image.png";
+  static const aboutUsIcon = "assets/images/about_us.png";
+  static const contactUsIcon ="assets/images/contact_us.png";
+  static const languageIcon = "assets/images/langauge.png";
+  static const medicalFileProfileIcon = "assets/images/medical_file.png";
+  static const privacyAndPolicyIcon = "assets/images/privacy_and_policy.png";
+  static const relativeIcon = "assets/images/relatives.png";
+  static const arrowIcon = "assets/images/arrow.png";
+  static const editProfileIcon = "assets/images/edit_profile.png";
+  static const profileCamera ="assets/images/profile_camera.png";
 }

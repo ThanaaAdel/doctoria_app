@@ -18,6 +18,11 @@ class DataFromSignIn {
   String? nickname;
   String? gender;
   String? postcode;
+  String? weight;
+  String? lang;
+  String? image;
+  String? location;
+  String? type;
   String? phone;
   @JsonKey(name: "refer_code")
   String? referCode;

@@ -449,6 +449,206 @@ class S {
       args: [],
     );
   }
+
+  /// `Not Found`
+  String get not_found {
+    return Intl.message(
+      'Not Found',
+      name: 'not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorry, the keyword you entered cannot be found, please check again or search with another keyword.`
+  String get text_not_found {
+    return Intl.message(
+      'Sorry, the keyword you entered cannot be found, please check again or search with another keyword.',
+      name: 'text_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reports`
+  String get reports {
+    return Intl.message(
+      'Reports',
+      name: 'reports',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message(
+      'History',
+      name: 'history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Heart Rate`
+  String get heart_rate {
+    return Intl.message(
+      'Heart Rate',
+      name: 'heart_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blood Group`
+  String get blood_group {
+    return Intl.message(
+      'Blood Group',
+      name: 'blood_group',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight`
+  String get weight_report {
+    return Intl.message(
+      'Weight',
+      name: 'weight_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check Up`
+  String get check_up {
+    return Intl.message(
+      'Check Up',
+      name: 'check_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reports Details`
+  String get reports_details {
+    return Intl.message(
+      'Reports Details',
+      name: 'reports_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest Reports`
+  String get latest_reports {
+    return Intl.message(
+      'Latest Reports',
+      name: 'latest_reports',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medical File`
+  String get medical_file_profile {
+    return Intl.message(
+      'Medical File',
+      name: 'medical_file_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy And Policy`
+  String get privacy_and_policy {
+    return Intl.message(
+      'Privacy And Policy',
+      name: 'privacy_and_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Us`
+  String get about_us {
+    return Intl.message(
+      'About Us',
+      name: 'about_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get contact_us {
+    return Intl.message(
+      'Contact Us',
+      name: 'contact_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Relatives`
+  String get relatives {
+    return Intl.message(
+      'Relatives',
+      name: 'relatives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

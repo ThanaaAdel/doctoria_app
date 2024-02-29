@@ -38,7 +38,26 @@
   "medical_file": "Medical \nfile",
   "home_car": "Home \nCar",
   "more": "More",
-  "popular_doctors": "Popular Doctors"
-
+  "popular_doctors": "Popular Doctors",
+  "not_found": "Not Found",
+  "text_not_found": "Sorry, the keyword you entered cannot be found, please check again or search with another keyword.",
+  "home": "Home",
+  "reports": "Reports",
+  "history": "History",
+  "profile": "Profile",
+  "heart_rate": "Heart Rate",
+  "blood_group": "Blood Group",
+  "weight_report": "Weight",
+  "check_up": "Check Up",
+  "reports_details":"Reports Details",
+  "latest_reports": "Latest Reports",
+  "edit_profile": "Edit Profile",
+  "medical_file_profile":"Medical File",
+  "language": "Language",
+  "privacy_and_policy": "Privacy And Policy",
+  "about_us": "About Us",
+  "contact_us": "Contact Us",
+  "relatives": "Relatives",
+  "all": "All"
 
 }

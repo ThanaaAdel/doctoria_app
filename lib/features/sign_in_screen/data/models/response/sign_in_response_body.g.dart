@@ -35,7 +35,12 @@ DataFromSignIn _$DataFromSignInFromJson(Map<String, dynamic> json) =>
       referCode: json['refer_code'] as String?,
       address: json['address'] as String?,
       token: json['token'] as String?,
-    );
+    )
+      ..weight = json['weight'] as String?
+      ..lang = json['lang'] as String?
+      ..image = json['image'] as String?
+      ..location = json['location'] as String?
+      ..type = json['type'] as String?;
 
 Map<String, dynamic> _$DataFromSignInToJson(DataFromSignIn instance) =>
     <String, dynamic>{
@@ -45,6 +50,11 @@ Map<String, dynamic> _$DataFromSignInToJson(DataFromSignIn instance) =>
       'nickname': instance.nickname,
       'gender': instance.gender,
       'postcode': instance.postcode,
+      'weight': instance.weight,
+      'lang': instance.lang,
+      'image': instance.image,
+      'location': instance.location,
+      'type': instance.type,
       'phone': instance.phone,
       'refer_code': instance.referCode,
       'address': instance.address,

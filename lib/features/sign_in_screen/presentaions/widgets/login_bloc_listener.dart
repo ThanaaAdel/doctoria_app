@@ -35,7 +35,11 @@ class _SignInBlocListenerState extends State<SignInBlocListener> {
             signInResponseBody = loginResponse;
 
         context.pop();
-        context.pushNamed(Routes.homeScreen,arguments: signInResponseBody);
+        if(signInResponseBody.data!.type == "doctor" ) {
+          context.pushNamed(Routes.reportsScreen);
+        } else {
+          context.pushNamed(Routes.buttomNavigation);
+        }
       },
           error:(error){
 
