@@ -4,6 +4,7 @@ class ApiConstant {
  static const String signUp = "auth/signup";
  static const String logout = "auth/logout";
  static const String homeSlider ="settings/sliders";
+ static const String doctor ="settings/doctors_by_category";
  static const String specializationPopularDoctors = "settings/specialization_popular_doctors";
 }
 

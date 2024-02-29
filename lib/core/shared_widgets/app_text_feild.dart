@@ -15,6 +15,7 @@ class AppTextFormField extends StatelessWidget {
   final Function(String?) validator;
   final TextEditingController? controller;
   final TextInputType? textInputType;
+  final double? borderRadius;
   const AppTextFormField(
       {super.key,
       required this.hintText,
@@ -25,7 +26,7 @@ class AppTextFormField extends StatelessWidget {
       this.contentPadding,
       required this.validator,
       this.controller,
-      this.textInputType, this.prefixIcon});
+      this.textInputType, this.prefixIcon, this.borderRadius});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +59,7 @@ class AppTextFormField extends StatelessWidget {
                 borderSide: const BorderSide(
                   color: ColorsManager.lightGrey,
                 ),
-                borderRadius: BorderRadius.circular(16.0.sp)),
+                borderRadius: BorderRadius.circular(borderRadius ??16.0.sp)),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: Colors.red,

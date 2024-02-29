@@ -15,6 +15,11 @@ class TextStyles {
       fontSize: 18.sp,
       fontWeight: FontWeight.w500,
       fontFamily: 'Poppins');
+  static TextStyle font16Blue500 = TextStyle(
+      color: ColorsManager.mainBlue,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w500,
+      fontFamily: 'Poppins');
   static TextStyle font14Black500 = TextStyle(
       color: ColorsManager.mainBlack,
       fontSize: 14.sp,
@@ -31,6 +36,11 @@ class TextStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     fontFamily: "Poppins",
+  );
+  static TextStyle font16gray500 =  TextStyle(
+    color: ColorsManager.mainBlack.withOpacity(0.5),
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
   );
   static TextStyle font12Blue500 = TextStyle(
     color: ColorsManager.mainBlue,

@@ -5,10 +5,10 @@ import '../../../../core/theming/image_manager.dart';
 import '../../../../core/theming/spacing.dart';
 import '../../../../core/theming/styles.dart';
 class ProfileListInformation extends StatelessWidget {
-  const ProfileListInformation({super.key, required this.iconUrl, required this.textDesc, this.onPressed});
+  const ProfileListInformation({super.key, required this.iconUrl, required this.textDesc, required this.onPressed});
  final String iconUrl;
  final String textDesc;
- final  Function()? onPressed;
+ final  VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,9 +25,7 @@ class ProfileListInformation extends StatelessWidget {
             ],
           ),
         GestureDetector(
-          onTap: () {
-            onPressed;
-          },
+          onTap:() => onPressed(),
           child:   Image.asset(ImageManager.arrowIcon,width: 24.w,height: 24.h),
         )
         ],),

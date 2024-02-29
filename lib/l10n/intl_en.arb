@@ -58,6 +58,17 @@
   "about_us": "About Us",
   "contact_us": "Contact Us",
   "relatives": "Relatives",
-  "all": "All"
-
+  "all": "All",
+  "male": "Male",
+  "female": "Female",
+  "save": "Save",
+  "check_now": "Check now",
+  "my_favorite_doctor": "My Favorite Doctor",
+  "no_found_doctors": "No Doctors Founded",
+  "text_from_no_found_doctors": "Lorem Ipsum is simply dummy text of the printing and typesetting.",
+  "go_to_doctors":  "Go to doctors",
+  "doctors": "Doctors",
+  "radiology": "Radiology",
+  "laboratory": "Laboratory",
+  "doctor_details": "Doctor Details"
 }

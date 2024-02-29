@@ -2,6 +2,7 @@ import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/media_query_helper.dart';
 import '../../../../core/theming/spacing.dart';
 import '../../../../core/theming/styles.dart';
+import '../../../../generated/l10n.dart';
 import '../../data/models/slider_model/slider_model.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +79,7 @@ class SliderHomeScreen extends StatelessWidget {
                       ),
 
                       child: Text(
-                        "Check now",
+                        S.of(context).check_now,
                         style: TextStyles.font12blue400.copyWith(fontSize: 10,fontWeight: FontWeight.bold),
                       )),
                 ),
@@ -88,13 +89,13 @@ class SliderHomeScreen extends StatelessWidget {
         ),
         Positioned(
           right: 5.w,
-          top: 15.h,
+          top: 5.h,
           child: Image.asset(
             ImageManager.imageHome,
           ),
         ),
         Positioned(
-          bottom: 4.h,
+          bottom: 10.h,
           left: 160.w,
           child: DotsIndicator(
             dotsCount: sliderModel.data!.length,

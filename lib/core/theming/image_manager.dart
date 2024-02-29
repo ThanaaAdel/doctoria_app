@@ -43,4 +43,7 @@ class ImageManager {
   static const arrowIcon = "assets/images/arrow.png";
   static const editProfileIcon = "assets/images/edit_profile.png";
   static const profileCamera ="assets/images/profile_camera.png";
+  static const noDoctorFoundedImage = "assets/images/no_doctor_founded_image.png";
+  static const arrowRight = "assets/images/arrow-right.png";
+  static const coloredHeartIcon = "assets/images/heart.png";
 }

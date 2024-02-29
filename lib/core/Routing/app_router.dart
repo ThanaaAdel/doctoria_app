@@ -1,4 +1,8 @@
+import 'package:doctoria_app/features/doctor_details_screen/presentaions/screens/doctor_details_screen.dart';
+
 import '../../features/edit_profile_screen/presentaions/screens/edit_profile_screen.dart';
+import '../../features/my_favorite_doctor_screen/logic/doctor_cubit/doctor_cubit.dart';
+import '../../features/my_favorite_doctor_screen/presentaions/screens/my_favorite_doctor_screen.dart';
 import '../../features/reports_details_screen/presentaions/screens/reports_details_screen.dart';
 import '../../features/reports_screen/presentations/screens/reports_screen.dart';
 import '../../features/buttom_navigation/presentaions/buttom_navigation.dart';
@@ -47,6 +51,18 @@ Route generateRoute(RouteSettings settings){
       return MaterialPageRoute(builder: (context) => const HomeScreen(),);
     case Routes.editProfileScreen:
       return MaterialPageRoute(builder: (context) => const EditProfileScreen(),);
+    case Routes.doctorDetailsScreen:
+      return MaterialPageRoute(builder: (context) => const DoctorDetailsScreen(),);
+    case Routes.myFavoriteDoctorScreen:
+      return MaterialPageRoute(
+        builder: (context) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => getIt<DoctorCubit>()),
+            // Add more BlocProviders if needed
+          ],
+          child: const MyFavoriteDoctorScreen(),
+        ),
+      );
     // case Routes.registerScreen:
     //   return MaterialPageRoute(builder: (context) => BlocProvider(
     //       create: (context) => getIt<RegisterCubit>(),

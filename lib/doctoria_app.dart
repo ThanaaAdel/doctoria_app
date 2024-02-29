@@ -30,7 +30,7 @@ class DoctorIaApp extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.buttomNavigation,
+        initialRoute: Routes.myFavoriteDoctorScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

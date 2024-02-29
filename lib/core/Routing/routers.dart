@@ -12,4 +12,6 @@ class Routes {
   static const reportsScreen = "/reportsScreen";
   static const reportsDetailsScreen = "/reportsDetailsScreen";
   static const editProfileScreen = "/editProfileScreen";
+  static const myFavoriteDoctorScreen = "/myFavoriteDoctorScreen";
+  static const doctorDetailsScreen = "/doctorDetailsScreen";
 }

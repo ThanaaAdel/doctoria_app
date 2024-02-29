@@ -649,6 +649,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Male`
+  String get male {
+    return Intl.message(
+      'Male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message(
+      'Female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check now`
+  String get check_now {
+    return Intl.message(
+      'Check now',
+      name: 'check_now',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Favorite Doctor`
+  String get my_favorite_doctor {
+    return Intl.message(
+      'My Favorite Doctor',
+      name: 'my_favorite_doctor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Doctors Founded`
+  String get no_found_doctors {
+    return Intl.message(
+      'No Doctors Founded',
+      name: 'no_found_doctors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem Ipsum is simply dummy text of the printing and typesetting.`
+  String get text_from_no_found_doctors {
+    return Intl.message(
+      'Lorem Ipsum is simply dummy text of the printing and typesetting.',
+      name: 'text_from_no_found_doctors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to doctors`
+  String get go_to_doctors {
+    return Intl.message(
+      'Go to doctors',
+      name: 'go_to_doctors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doctors`
+  String get doctors {
+    return Intl.message(
+      'Doctors',
+      name: 'doctors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Radiology`
+  String get radiology {
+    return Intl.message(
+      'Radiology',
+      name: 'radiology',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Laboratory`
+  String get laboratory {
+    return Intl.message(
+      'Laboratory',
+      name: 'laboratory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doctor Details`
+  String get doctor_details {
+    return Intl.message(
+      'Doctor Details',
+      name: 'doctor_details',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

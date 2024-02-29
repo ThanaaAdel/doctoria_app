@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "book_your_date": MessageLookupByLibrary.simpleMessage("احجز تاريخك"),
         "category": MessageLookupByLibrary.simpleMessage("التصنيف"),
         "change_number": MessageLookupByLibrary.simpleMessage("تغيير الرقم"),
+        "check_now": MessageLookupByLibrary.simpleMessage("افحص الان"),
         "check_up": MessageLookupByLibrary.simpleMessage("فحص طبي"),
         "choose_a_doctor": MessageLookupByLibrary.simpleMessage("اختيار طبيب"),
         "confirm_password":
@@ -42,13 +43,19 @@ class MessageLookup extends MessageLookupByLibrary {
                 "أدخل الرقم المكون من 4 خانات الذي تلقيته عبر رقم الهاتف."),
         "do_not_have_account":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "doctor_details":
+            MessageLookupByLibrary.simpleMessage("تفاصيل الدكتور"),
+        "doctors": MessageLookupByLibrary.simpleMessage("الاطياء"),
         "edit_profile":
             MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
+        "female": MessageLookupByLibrary.simpleMessage("انثي"),
         "find_a_doctor": MessageLookupByLibrary.simpleMessage("البحث عن طبيب"),
         "forget_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "general_consultation":
             MessageLookupByLibrary.simpleMessage("استشارة عامة"),
+        "go_to_doctors":
+            MessageLookupByLibrary.simpleMessage("انتقل إلى الأطباء"),
         "heart_rate": MessageLookupByLibrary.simpleMessage("معدل ضربات القلب"),
         "history": MessageLookupByLibrary.simpleMessage("التاريخ"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
@@ -59,14 +66,20 @@ class MessageLookup extends MessageLookupByLibrary {
             "يمكنك المقارنة بين الأطباء، وفقًا لتقييم المرضى الآخرين"),
         "intro_screen3": MessageLookupByLibrary.simpleMessage(
             "بعد اختيار الطبيب الذي يناسبك، يمكنك حجز موعدك عبر الإنترنت"),
+        "laboratory": MessageLookupByLibrary.simpleMessage("المختبر"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "latest_reports": MessageLookupByLibrary.simpleMessage("أحدث التقارير"),
+        "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "medical_bag": MessageLookupByLibrary.simpleMessage("حقيبة طبية"),
         "medical_file": MessageLookupByLibrary.simpleMessage("الملف الطبي"),
         "medical_file_profile":
             MessageLookupByLibrary.simpleMessage("الملف الطبي"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "my_favorite_doctor":
+            MessageLookupByLibrary.simpleMessage("طبيبي المفضل"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "no_found_doctors":
+            MessageLookupByLibrary.simpleMessage("لا يوجد أطباء"),
         "not_found": MessageLookupByLibrary.simpleMessage("غير موجود"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
@@ -75,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("الخصوصية والسياسات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "radiology": MessageLookupByLibrary.simpleMessage("الأشعة"),
         "referral_code": MessageLookupByLibrary.simpleMessage("كود الإحالة"),
         "relatives": MessageLookupByLibrary.simpleMessage("الأقارب"),
         "reports": MessageLookupByLibrary.simpleMessage("التقارير"),
@@ -86,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "إعادة تعيين عبر الرسائل النصية"),
         "reset_via_whatsapp":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين عبر الواتساب"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "see_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_up": MessageLookupByLibrary.simpleMessage("التسجيل"),
@@ -97,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "حسابك جاهز للاستخدام، ستتم إعادة توجيهك إلى الصفحة الرئيسية في بضع ثوانٍ..."),
         "text_create_new_password_page":
             MessageLookupByLibrary.simpleMessage("أنشئ كلمة المرور الجديدة"),
+        "text_from_no_found_doctors": MessageLookupByLibrary.simpleMessage(
+            "لوريم إيبسوم هو نص عبارة عن نص شكلي وهمي من صناعة الطباعة والتنضيد."),
         "text_not_found": MessageLookupByLibrary.simpleMessage(
             "عذرًا، لا يمكن العثور على الكلمة الرئيسية التي أدخلتها، يرجى التحقق مرة أخرى أو البحث باستخدام كلمة رئيسية أخرى."),
         "text_sign_in":

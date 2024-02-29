@@ -58,7 +58,19 @@
   "about_us": "حولنا",
   "contact_us": "اتصل بنا",
   "relatives": "الأقارب",
-  "all": "الكل"
+  "all": "الكل",
+  "male": "ذكر",
+  "female": "انثي",
+  "save": "حفظ",
+  "check_now": "افحص الان",
+  "my_favorite_doctor":"طبيبي المفضل",
+  "no_found_doctors": "لا يوجد أطباء",
+  "text_from_no_found_doctors": "لوريم إيبسوم هو نص عبارة عن نص شكلي وهمي من صناعة الطباعة والتنضيد.",
+  "go_to_doctors": "انتقل إلى الأطباء",
+  "doctors": "الاطياء",
+  "radiology": "الأشعة",
+  "laboratory": "المختبر",
+  "doctor_details": "تفاصيل الدكتور"
 }
 
 

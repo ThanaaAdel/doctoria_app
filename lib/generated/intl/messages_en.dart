@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Book Your date"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "change_number": MessageLookupByLibrary.simpleMessage("Change number"),
+        "check_now": MessageLookupByLibrary.simpleMessage("Check now"),
         "check_up": MessageLookupByLibrary.simpleMessage("Check Up"),
         "choose_a_doctor":
             MessageLookupByLibrary.simpleMessage("Choose a Doctor"),
@@ -45,12 +46,17 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter the 4-digit that we have sent via the phone number ."),
         "do_not_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
+        "doctor_details":
+            MessageLookupByLibrary.simpleMessage("Doctor Details"),
+        "doctors": MessageLookupByLibrary.simpleMessage("Doctors"),
         "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+        "female": MessageLookupByLibrary.simpleMessage("Female"),
         "find_a_doctor": MessageLookupByLibrary.simpleMessage("Find a doctor"),
         "forget_password":
             MessageLookupByLibrary.simpleMessage("Forget Password"),
         "general_consultation":
             MessageLookupByLibrary.simpleMessage("General\nconsultation"),
+        "go_to_doctors": MessageLookupByLibrary.simpleMessage("Go to doctors"),
         "heart_rate": MessageLookupByLibrary.simpleMessage("Heart Rate"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -61,15 +67,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can compare between doctors, according to the evaluation of other patients"),
         "intro_screen3": MessageLookupByLibrary.simpleMessage(
             "After choosing the doctor that suits you, you can book your appointment online"),
+        "laboratory": MessageLookupByLibrary.simpleMessage("Laboratory"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "latest_reports":
             MessageLookupByLibrary.simpleMessage("Latest Reports"),
+        "male": MessageLookupByLibrary.simpleMessage("Male"),
         "medical_bag": MessageLookupByLibrary.simpleMessage("medical\nBag"),
         "medical_file": MessageLookupByLibrary.simpleMessage("Medical \nfile"),
         "medical_file_profile":
             MessageLookupByLibrary.simpleMessage("Medical File"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
+        "my_favorite_doctor":
+            MessageLookupByLibrary.simpleMessage("My Favorite Doctor"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "no_found_doctors":
+            MessageLookupByLibrary.simpleMessage("No Doctors Founded"),
         "not_found": MessageLookupByLibrary.simpleMessage("Not Found"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
@@ -78,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("Privacy And Policy"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "radiology": MessageLookupByLibrary.simpleMessage("Radiology"),
         "referral_code": MessageLookupByLibrary.simpleMessage("Referral Code"),
         "relatives": MessageLookupByLibrary.simpleMessage("Relatives"),
         "reports": MessageLookupByLibrary.simpleMessage("Reports"),
@@ -88,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset_via_sms": MessageLookupByLibrary.simpleMessage("Reset Via SMS"),
         "reset_via_whatsapp":
             MessageLookupByLibrary.simpleMessage("Reset Via Whatsapp"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "see_all": MessageLookupByLibrary.simpleMessage("See All"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
@@ -99,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your account is ready to use, you will be redirected to the Home page in a few Seconds..."),
         "text_create_new_password_page":
             MessageLookupByLibrary.simpleMessage("Create Your New Password"),
+        "text_from_no_found_doctors": MessageLookupByLibrary.simpleMessage(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting."),
         "text_not_found": MessageLookupByLibrary.simpleMessage(
             "Sorry, the keyword you entered cannot be found, please check again or search with another keyword."),
         "text_sign_in":
