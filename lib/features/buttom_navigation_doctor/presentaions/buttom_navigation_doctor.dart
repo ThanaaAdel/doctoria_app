@@ -1,51 +1,47 @@
+import 'package:doctoria_app/features/my_consultations_screen/logic/booking_cubit/booking_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../core/di/dependacy_injection.dart';
 import '../../../core/theming/colors.dart';
 import '../../../core/theming/image_manager.dart';
-import '../../history_screen/presentations/history_screen.dart';
-import '../../home_screen/presentations/screens/home_screen.dart';
+import '../../my_consultations_screen/presentations/screens/my_consultations_screen.dart';
 import '../../profile_screen/presentations/screens/profile_screen.dart';
 import '../../reports_screen/presentations/screens/reports_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../generated/l10n.dart';
-class ButtonNavigation extends StatefulWidget {
-  const ButtonNavigation({Key? key}) : super(key: key);
+class ButtonNavigationDoctor extends StatelessWidget {
+  ButtonNavigationDoctor({Key? key, required this.token}) : super(key: key);
 
-  @override
-  _ButtonNavigationState createState() => _ButtonNavigationState();
-}
-
-class _ButtonNavigationState extends State<ButtonNavigation> {
   final controller = Get.put(NavigationController());
-
+  final String token;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Obx(() => BottomNavigationBar(
+        mouseCursor: MouseCursor.uncontrolled,
         backgroundColor: ColorsManager.mainWhite,
         selectedItemColor: controller.selectedIndex.value == 0
             ? ColorsManager.mainBlue // Change color for the selected item
             : Colors.grey, // Set default color for unselected items
         currentIndex: controller.selectedIndex.value,
         type: BottomNavigationBarType.fixed,
+
         showUnselectedLabels: false,
         onTap: (index) => controller.selectedIndex.value = index,
         items: [
           BottomNavigationBarItem(
-            activeIcon: Image.asset(ImageManager.selectedHomeIcon),
-            icon: Image.asset(ImageManager.unselectedHomeIcon),
-            label: S.of(context).home,
+            activeIcon: Image.asset(ImageManager.selectedOnlineIcon),
+            icon: Image.asset(ImageManager.unSelectedOnlineIcon),
+            label: S.of(context).online,
           ),
           BottomNavigationBarItem(
-            activeIcon: Image.asset(ImageManager.selectedReportsIcon),
-            icon: Image.asset(ImageManager.unselectedReportsIcon),
-            label: S.of(context).reports,
+            activeIcon: Image.asset(ImageManager.selectedConsultationsIcon),
+            icon: Image.asset(ImageManager.unselectedConsultationsIcons),
+            label: S.of(context).my_consultations,
           ),
-          BottomNavigationBarItem(
-            activeIcon: Image.asset(ImageManager.selectedHistoryIcon),
-            icon: Image.asset(ImageManager.unselectedHistoryIcon),
-            label: S.of(context).history,
-          ),
+
           BottomNavigationBarItem(
             activeIcon: Image.asset(ImageManager.selectedProfileIcon),
             icon: Image.asset(ImageManager.unselectedProfileIcon),
@@ -55,11 +51,13 @@ class _ButtonNavigationState extends State<ButtonNavigation> {
       )),
       body: Obx(() => IndexedStack(
         index: controller.selectedIndex.value,
-        children: const [
-          HomeScreen(),
-          ReportsScreen(),
-          HistoryScreen(),
-          ProfileScreen()
+        children:  [
+
+          const ReportsScreen(),
+          BlocProvider(
+              create: (context) => getIt<BookingCubit>(),
+              child:  MyConsultationsScreen(token: token,)),
+          const ProfileScreen(),
 
         ],
       )),

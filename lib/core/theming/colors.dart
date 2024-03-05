@@ -10,4 +10,7 @@ class ColorsManager{
   static const lightGrey = Color(0xffEDEDED);
   static const moreLightGrey = Color(0xffFDFDFF);
   static const neutralGray = Color(0xff9E9E9E);
+  static const completeColor = Color(0xffE41D1D);
+  static const activeColor = Color(0xff31B23E);
+  static const pendingColor = Color(0xffDABF30);
 }

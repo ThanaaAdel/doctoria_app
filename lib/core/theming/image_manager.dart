@@ -46,4 +46,9 @@ class ImageManager {
   static const noDoctorFoundedImage = "assets/images/no_doctor_founded_image.png";
   static const arrowRight = "assets/images/arrow-right.png";
   static const coloredHeartIcon = "assets/images/heart.png";
+  static const logoutIcon = "assets/images/7124045_logout_icon.png";
+  static const selectedConsultationsIcon = "assets/images/selected_my_consultaions.png";
+  static const unselectedConsultationsIcons = "assets/images/unselected_my_consultaions.png";
+  static const selectedOnlineIcon = "assets/images/selected_online.png";
+  static const unSelectedOnlineIcon = "assets/images/unselected_online.png";
 }

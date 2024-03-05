@@ -1,3 +1,4 @@
+import '../../../../core/theming/image_manager.dart';
 import '../../../../generated/l10n.dart';
 import 'popular_doctor_list_view.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class _SpecializationPopularDoctorsTabBarState
 
   Padding successState(SpecializationPopularDoctorsModel specializationPopularDoctorsModel) {
     // Dynamically set the length of TabController based on data length
-    tabController = TabController(length: specializationPopularDoctorsModel.data!.length, vsync: this);
+    tabController = TabController(length: specializationPopularDoctorsModel.data!.length+1, vsync: this);
 
     return Padding(
       padding: EdgeInsets.only(left: 10.w, right: 10.w),
@@ -100,7 +101,12 @@ class _SpecializationPopularDoctorsTabBarState
                     specializationPopularDoctorsModel.data!.isNotEmpty)
                   allTabListView(specializationPopularDoctorsModel)
                 else
-                  const NotFoundWidget(),
+                   NotFoundWidget(
+                    imageLink: ImageManager.notFoundIcon,
+                    textDesc:S.of(context).text_not_found ,
+                    text: ImageManager.notFoundIcon,
+
+                  ),
                 // Add tab views for each specialization
                 for (int i = 0;
                 i < specializationPopularDoctorsModel.data!.length;
@@ -109,7 +115,12 @@ class _SpecializationPopularDoctorsTabBarState
                       .data![i].limitPopularDoctors!.isNotEmpty)
                     tabsListView(specializationPopularDoctorsModel, i)
                   else
-                    const NotFoundWidget(),
+                    NotFoundWidget(
+                      imageLink: ImageManager.notFoundIcon,
+                      textDesc:S.of(context).text_not_found ,
+                      text: ImageManager.notFoundIcon,
+
+                    ),
               ],
             ),
           ),

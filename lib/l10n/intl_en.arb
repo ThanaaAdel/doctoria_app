@@ -70,5 +70,16 @@
   "doctors": "Doctors",
   "radiology": "Radiology",
   "laboratory": "Laboratory",
-  "doctor_details": "Doctor Details"
+  "doctor_details": "Doctor Details",
+  "logout": "Logout",
+  "online": "Online",
+  "my_consultations": "My Consultations",
+  "all_consulting": "All Consulting",
+  "active": "Active",
+  "pending": "pending",
+  "complete": "Complete",
+  "consultation_text": "There are no consultations now!",
+  "consultation_text_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+
+
 }

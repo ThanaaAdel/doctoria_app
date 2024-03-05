@@ -70,7 +70,16 @@
   "doctors": "الاطياء",
   "radiology": "الأشعة",
   "laboratory": "المختبر",
-  "doctor_details": "تفاصيل الدكتور"
+  "doctor_details": "تفاصيل الدكتور",
+  "logout": "تسجيل الخروج",
+  "online": "على الإنترنت",
+  "my_consultations": "استشاراتي",
+  "all_consulting": "جميع الاستشارات",
+  "active": "نشط",
+  "complete": "اكتمل",
+  "consultation_text": "لا توجد استشارات الآن!",
+  "consultation_text_desc": "لوريم إيبسوم هو ببساطة نص شكلي وصناعة الطباعة.",
+  "pending": "قيد الانتظار"
 }
 
 

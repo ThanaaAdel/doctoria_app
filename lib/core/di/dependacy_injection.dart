@@ -1,12 +1,17 @@
 import 'package:dio/dio.dart';
+import 'package:doctoria_app/features/my_consultations_screen/data/repos/booking_accept_repo/booking_accept_repo.dart';
+import 'package:doctoria_app/features/my_consultations_screen/data/repos/booking_repo/booking_repo.dart';
+import 'package:doctoria_app/features/my_consultations_screen/logic/booking_cubit/booking_cubit.dart';
 import 'package:doctoria_app/features/my_favorite_doctor_screen/data/repos/doctor_repo.dart';
 import 'package:doctoria_app/features/my_favorite_doctor_screen/logic/doctor_cubit/doctor_cubit.dart';
-import '../../features/home_screen/data/repos/specialization_popular_doctors_repo/specialization_popular_doctors_repo.dart';
-import '../../features/home_screen/logic/cubits/specialization_popular_doctors_cubit/specialization_popular_doctors_cubit.dart';
+import 'package:doctoria_app/features/profile_screen/data/repos/logout_repo.dart';
+import 'package:doctoria_app/features/profile_screen/logic/logout_cubit/logout_cubit.dart';
 import 'package:get_it/get_it.dart';
-
-import '../../features/home_screen/data/repos/home_slider_repo/home_slider_repo.dart';
-import '../../features/home_screen/logic/cubits/slider_cubit/slider_cubit.dart';
+import '../../features/home_patient_screen/data/repos/home_slider_repo/home_slider_repo.dart';
+import '../../features/home_patient_screen/data/repos/specialization_popular_doctors_repo/specialization_popular_doctors_repo.dart';
+import '../../features/home_patient_screen/logic/cubits/slider_cubit/slider_cubit.dart';
+import '../../features/home_patient_screen/logic/cubits/specialization_popular_doctors_cubit/specialization_popular_doctors_cubit.dart';
+import '../../features/my_consultations_screen/logic/booking_accept_cubit/booking_accept_cubit.dart';
 import '../../features/sign_in_screen/data/repos/sign_in_repo.dart';
 import '../../features/sign_in_screen/logic/sign_in/sign_in_cubit.dart';
 import '../../features/sign_up_screen/data/repos/sign_up_repo.dart';
@@ -33,5 +38,13 @@ final getIt = GetIt.instance;
   //doctorData
   getIt.registerLazySingleton<DoctorRepo>(() => DoctorRepo(getIt()));
   getIt.registerFactory<DoctorCubit>(() => DoctorCubit(getIt()));
-
+  // booking
+  getIt.registerLazySingleton<BookingRepo>(() => BookingRepo(getIt()));
+  getIt.registerFactory<BookingCubit>(() => BookingCubit(getIt()));
+ // logout
+  getIt.registerLazySingleton<LogoutRepo>(() => LogoutRepo(getIt()));
+  getIt.registerFactory<LogoutCubit>(() => LogoutCubit(getIt()));
+  // booking accept
+  getIt.registerLazySingleton<BookingAcceptRepo>(() => BookingAcceptRepo(getIt()));
+  getIt.registerFactory<BookingAcceptCubit>(() => BookingAcceptCubit(getIt()));
  }

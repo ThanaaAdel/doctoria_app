@@ -8,10 +8,14 @@ class Routes {
   static const homeScreen = '/homeScreen';
   static const registerScreen = '/registerScreen';
   static const createNewPassword = '/createNewPassword';
-  static const buttomNavigation  ='/buttomNavigation';
+  static const buttomNavigationPatient  ='/buttomNavigationPatient';
+  static const buttomNavigationDoctor  ='/buttomNavigationDoctor';
   static const reportsScreen = "/reportsScreen";
   static const reportsDetailsScreen = "/reportsDetailsScreen";
   static const editProfileScreen = "/editProfileScreen";
   static const myFavoriteDoctorScreen = "/myFavoriteDoctorScreen";
   static const doctorDetailsScreen = "/doctorDetailsScreen";
+  static const profileScreen = "/profileScreen";
+  static const myConsultationScreen = "/myConsultationScreen";
+
 }

@@ -15,8 +15,8 @@ import '../widgets/categories_section.dart';
 import '../widgets/slider_home_screen_list.dart';
 import '../widgets/specialization_popular_doctors_tabBar.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomePatientScreen extends StatelessWidget {
+  const HomePatientScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

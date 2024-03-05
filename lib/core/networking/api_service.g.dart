@@ -79,6 +79,34 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<LogoutDataModel> logout() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': 'Bearer {token}'};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LogoutDataModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'auth/logout',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = LogoutDataModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<SliderModel> homeSliderData() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -160,6 +188,71 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = DoctorModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<BookingModel> bookingData(
+    String status,
+    String token,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'status': status};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BookingModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              '/doctor/auth/bookings',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BookingModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<BookingAcceptModel> bookingAccept(
+    BookingAcceptRequestBody bookingAcceptRequestBody,
+    String token,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(bookingAcceptRequestBody.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<BookingAcceptModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              '/doctor/auth/accept_booking',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = BookingAcceptModel.fromJson(_result.data!);
     return value;
   }
 

@@ -23,7 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about_us": MessageLookupByLibrary.simpleMessage("حولنا"),
+        "active": MessageLookupByLibrary.simpleMessage("نشط"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
+        "all_consulting":
+            MessageLookupByLibrary.simpleMessage("جميع الاستشارات"),
         "blood_group": MessageLookupByLibrary.simpleMessage("فصيلة الدم"),
         "book_your_date": MessageLookupByLibrary.simpleMessage("احجز تاريخك"),
         "category": MessageLookupByLibrary.simpleMessage("التصنيف"),
@@ -31,9 +34,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_now": MessageLookupByLibrary.simpleMessage("افحص الان"),
         "check_up": MessageLookupByLibrary.simpleMessage("فحص طبي"),
         "choose_a_doctor": MessageLookupByLibrary.simpleMessage("اختيار طبيب"),
+        "complete": MessageLookupByLibrary.simpleMessage("اكتمل"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا!"),
+        "consultation_text":
+            MessageLookupByLibrary.simpleMessage("لا توجد استشارات الآن!"),
+        "consultation_text_desc": MessageLookupByLibrary.simpleMessage(
+            "لوريم إيبسوم هو ببساطة نص شكلي وصناعة الطباعة."),
         "contact_us": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
         "continue_button": MessageLookupByLibrary.simpleMessage("متابعة"),
         "create_new_password":
@@ -69,19 +77,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "laboratory": MessageLookupByLibrary.simpleMessage("المختبر"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "latest_reports": MessageLookupByLibrary.simpleMessage("أحدث التقارير"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "male": MessageLookupByLibrary.simpleMessage("ذكر"),
         "medical_bag": MessageLookupByLibrary.simpleMessage("حقيبة طبية"),
         "medical_file": MessageLookupByLibrary.simpleMessage("الملف الطبي"),
         "medical_file_profile":
             MessageLookupByLibrary.simpleMessage("الملف الطبي"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "my_consultations": MessageLookupByLibrary.simpleMessage("استشاراتي"),
         "my_favorite_doctor":
             MessageLookupByLibrary.simpleMessage("طبيبي المفضل"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "no_found_doctors":
             MessageLookupByLibrary.simpleMessage("لا يوجد أطباء"),
         "not_found": MessageLookupByLibrary.simpleMessage("غير موجود"),
+        "online": MessageLookupByLibrary.simpleMessage("على الإنترنت"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "popular_doctors":
             MessageLookupByLibrary.simpleMessage("أطباء مشهورين"),

@@ -23,7 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
+        "active": MessageLookupByLibrary.simpleMessage("Active"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
+        "all_consulting":
+            MessageLookupByLibrary.simpleMessage("All Consulting"),
         "blood_group": MessageLookupByLibrary.simpleMessage("Blood Group"),
         "book_your_date":
             MessageLookupByLibrary.simpleMessage("Book Your date"),
@@ -33,10 +36,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_up": MessageLookupByLibrary.simpleMessage("Check Up"),
         "choose_a_doctor":
             MessageLookupByLibrary.simpleMessage("Choose a Doctor"),
+        "complete": MessageLookupByLibrary.simpleMessage("Complete"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations!"),
+        "consultation_text": MessageLookupByLibrary.simpleMessage(
+            "There are no consultations now!"),
+        "consultation_text_desc": MessageLookupByLibrary.simpleMessage(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
         "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
         "continue_button": MessageLookupByLibrary.simpleMessage("Continue"),
         "create_new_password":
@@ -71,19 +79,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "latest_reports":
             MessageLookupByLibrary.simpleMessage("Latest Reports"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "male": MessageLookupByLibrary.simpleMessage("Male"),
         "medical_bag": MessageLookupByLibrary.simpleMessage("medical\nBag"),
         "medical_file": MessageLookupByLibrary.simpleMessage("Medical \nfile"),
         "medical_file_profile":
             MessageLookupByLibrary.simpleMessage("Medical File"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
+        "my_consultations":
+            MessageLookupByLibrary.simpleMessage("My Consultations"),
         "my_favorite_doctor":
             MessageLookupByLibrary.simpleMessage("My Favorite Doctor"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "no_found_doctors":
             MessageLookupByLibrary.simpleMessage("No Doctors Founded"),
         "not_found": MessageLookupByLibrary.simpleMessage("Not Found"),
+        "online": MessageLookupByLibrary.simpleMessage("Online"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "pending": MessageLookupByLibrary.simpleMessage("pending"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "popular_doctors":
             MessageLookupByLibrary.simpleMessage("Popular Doctors"),

@@ -769,6 +769,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message(
+      'Online',
+      name: 'online',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Consultations`
+  String get my_consultations {
+    return Intl.message(
+      'My Consultations',
+      name: 'my_consultations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Consulting`
+  String get all_consulting {
+    return Intl.message(
+      'All Consulting',
+      name: 'all_consulting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message(
+      'Active',
+      name: 'active',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `pending`
+  String get pending {
+    return Intl.message(
+      'pending',
+      name: 'pending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete`
+  String get complete {
+    return Intl.message(
+      'Complete',
+      name: 'complete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no consultations now!`
+  String get consultation_text {
+    return Intl.message(
+      'There are no consultations now!',
+      name: 'consultation_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`
+  String get consultation_text_desc {
+    return Intl.message(
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      name: 'consultation_text_desc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -16,7 +16,7 @@ class ReportsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Scaffold(body: ListView(
       children: [
         AppBarWidget(
           text: S
@@ -35,10 +35,10 @@ class ReportsScreen extends StatelessWidget {
               context.pushNamed(Routes.reportsDetailsScreen);
             },
           ),
-        ),),
-         const LatestReportListView(),
+          ),),
+        const LatestReportListView(),
 
       ],
-    );
+    ));
   }
 }
