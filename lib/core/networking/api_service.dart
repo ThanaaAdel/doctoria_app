@@ -2,6 +2,8 @@ import 'package:dio/dio.dart' hide Headers;
 import 'package:doctoria_app/features/my_consultations_screen/data/models/booking_accept_model/booking_accept_model.dart';
 import 'package:doctoria_app/features/my_consultations_screen/data/models/booking_model/booking_model.dart';
 import 'package:doctoria_app/features/my_favorite_doctor_screen/data/models/doctor_model/doctor_model.dart';
+import '../../features/diagnosis_patient_condition_screen/data/models/booking_accept_details_request/booking_accept_details_request.dart';
+import '../../features/diagnosis_patient_condition_screen/data/models/booking_acceptt_details_model/booking_accept_details_response_body_model.dart';
 import '../../features/home_patient_screen/data/models/slider_model/slider_model.dart';
 import '../../features/home_patient_screen/data/models/specialization_popular_doctors_model/specialization_popular_doctors_model.dart';
 import '../../features/my_consultations_screen/data/models/booking_accept_model/request/booking_accept_request_model.dart';
@@ -66,6 +68,13 @@ abstract class ApiService {
   Future<BookingAcceptModel> bookingAccept(
       @Body() BookingAcceptRequestBody bookingAcceptRequestBody,
      @Header("Authorization") String token,
+      );
+  // booking accept details
+  @POST(ApiConstant.bookingAcceptDetails)
+  @FormUrlEncoded()
+  Future<BookingAcceptDetailsResponseBody> bookingAcceptDetails(
+      @Body() BookingAcceptDetailsRequestBody bookingAcceptDetailsRequestBody,
+      @Header("Authorization") String token,
       );
 
 }

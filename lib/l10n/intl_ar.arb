@@ -79,7 +79,19 @@
   "complete": "اكتمل",
   "consultation_text": "لا توجد استشارات الآن!",
   "consultation_text_desc": "لوريم إيبسوم هو ببساطة نص شكلي وصناعة الطباعة.",
-  "pending": "قيد الانتظار"
+  "pending": "قيد الانتظار",
+  "Diagnosis_patient_condition": "تشخيص حالة المريض",
+  "booking_confirmed": "تاكيد الحجز",
+  "add_new": "اضافة جديد",
+  "prescription": "روشتة",
+  "treatment": "العلاج",
+  "note": "ملحوظة :",
+  "add_report": "اضافة تقرير",
+  "diagnosis": "تشخيص",
+  "add_diagnosis": "اضافة تشخيص",
+  "assessment": "تقدير",
+  "submit": "إرسال"
+
 }
 
 

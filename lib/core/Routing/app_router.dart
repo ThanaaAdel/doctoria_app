@@ -1,8 +1,12 @@
+import 'package:doctoria_app/features/add_diagnosis_screen/presentations/screens/add_diagnosis_screen.dart';
+import 'package:doctoria_app/features/add_report_screen/presentaions/screens/add_report_screen.dart';
+import 'package:doctoria_app/features/diagnosis_patient_condition_screen/logic/booking_accept_details_cubit/booking_accept_details_cubit.dart';
 import 'package:doctoria_app/features/doctor_details_screen/presentaions/screens/doctor_details_screen.dart';
 import 'package:doctoria_app/features/my_consultations_screen/presentations/screens/my_consultations_screen.dart';
 import 'package:doctoria_app/features/profile_screen/presentations/screens/profile_screen.dart';
 import '../../features/buttom_navigation_doctor/presentaions/buttom_navigation_doctor.dart';
 import '../../features/buttom_navigation_patient/presentaions/buttom_navigation_patient.dart';
+import '../../features/diagnosis_patient_condition_screen/presentaions/screens/diagnosis_patient_condition_screen.dart';
 import '../../features/edit_profile_screen/presentaions/screens/edit_profile_screen.dart';
 import '../../features/home_patient_screen/presentations/screens/home_patient_screen.dart';
 import '../../features/my_favorite_doctor_screen/logic/doctor_cubit/doctor_cubit.dart';
@@ -34,6 +38,14 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnBoardingScreen(),
         );
+      case Routes.addReportScreen:
+        return MaterialPageRoute(
+          builder: (context) => const AddReportScreen(),
+        );
+      case Routes.addDiagnosisScreen:
+        return MaterialPageRoute(
+          builder: (context) => const AddDiagnosisScreen(),
+        );
       case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -49,6 +61,14 @@ class AppRouter {
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => const ResetPasswordScreen(),
+        );
+      case Routes.diagnosisPatientConditionScreen:
+        final token = settings.arguments as String;
+        final bookingId = settings.arguments as int;
+        return MaterialPageRoute(
+          builder: (context) =>  BlocProvider(
+    create: (context) => getIt<BookingAcceptDetailsCubit>(),
+              child: DiagnosisPatientConditionScreen(token: token,bookingId: bookingId)),
         );
       case Routes.createNewPassword:
         return MaterialPageRoute(

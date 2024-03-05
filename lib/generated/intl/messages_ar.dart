@@ -22,13 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Diagnosis_patient_condition":
+            MessageLookupByLibrary.simpleMessage("تشخيص حالة المريض"),
         "about_us": MessageLookupByLibrary.simpleMessage("حولنا"),
         "active": MessageLookupByLibrary.simpleMessage("نشط"),
+        "add_diagnosis": MessageLookupByLibrary.simpleMessage("اضافة تشخيص"),
+        "add_new": MessageLookupByLibrary.simpleMessage("اضافة جديد"),
+        "add_report": MessageLookupByLibrary.simpleMessage("اضافة تقرير"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "all_consulting":
             MessageLookupByLibrary.simpleMessage("جميع الاستشارات"),
+        "assessment": MessageLookupByLibrary.simpleMessage("تقدير"),
         "blood_group": MessageLookupByLibrary.simpleMessage("فصيلة الدم"),
         "book_your_date": MessageLookupByLibrary.simpleMessage("احجز تاريخك"),
+        "booking_confirmed":
+            MessageLookupByLibrary.simpleMessage("تاكيد الحجز"),
         "category": MessageLookupByLibrary.simpleMessage("التصنيف"),
         "change_number": MessageLookupByLibrary.simpleMessage("تغيير الرقم"),
         "check_now": MessageLookupByLibrary.simpleMessage("افحص الان"),
@@ -49,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description_text_verification_screen":
             MessageLookupByLibrary.simpleMessage(
                 "أدخل الرقم المكون من 4 خانات الذي تلقيته عبر رقم الهاتف."),
+        "diagnosis": MessageLookupByLibrary.simpleMessage("تشخيص"),
         "do_not_have_account":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "doctor_details":
@@ -91,12 +100,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_found_doctors":
             MessageLookupByLibrary.simpleMessage("لا يوجد أطباء"),
         "not_found": MessageLookupByLibrary.simpleMessage("غير موجود"),
+        "note": MessageLookupByLibrary.simpleMessage("ملحوظة :"),
         "online": MessageLookupByLibrary.simpleMessage("على الإنترنت"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "popular_doctors":
             MessageLookupByLibrary.simpleMessage("أطباء مشهورين"),
+        "prescription": MessageLookupByLibrary.simpleMessage("روشتة"),
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("الخصوصية والسياسات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
@@ -120,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "specialized_consultation":
             MessageLookupByLibrary.simpleMessage("استشارة متخصصة"),
         "start_now": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+        "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
         "text_congratulations": MessageLookupByLibrary.simpleMessage(
             "حسابك جاهز للاستخدام، ستتم إعادة توجيهك إلى الصفحة الرئيسية في بضع ثوانٍ..."),
         "text_create_new_password_page":
@@ -134,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("التسجيل في حسابك"),
         "text_verification_Screen":
             MessageLookupByLibrary.simpleMessage("أدخل رمز التحقق"),
+        "treatment": MessageLookupByLibrary.simpleMessage("العلاج"),
         "verification": MessageLookupByLibrary.simpleMessage("التحقق"),
         "weight_report": MessageLookupByLibrary.simpleMessage("الوزن")
       };

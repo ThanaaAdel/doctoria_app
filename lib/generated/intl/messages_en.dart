@@ -22,21 +22,29 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Diagnosis_patient_condition": MessageLookupByLibrary.simpleMessage(
+            "Diagnosis patient\'s condition"),
         "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
         "active": MessageLookupByLibrary.simpleMessage("Active"),
+        "add_diagnosis": MessageLookupByLibrary.simpleMessage("Add Diagnosis"),
+        "add_new": MessageLookupByLibrary.simpleMessage("Add New"),
+        "add_report": MessageLookupByLibrary.simpleMessage("Add Report"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "all_consulting":
             MessageLookupByLibrary.simpleMessage("All Consulting"),
+        "assessment": MessageLookupByLibrary.simpleMessage("Assessment"),
         "blood_group": MessageLookupByLibrary.simpleMessage("Blood Group"),
         "book_your_date":
             MessageLookupByLibrary.simpleMessage("Book Your date"),
+        "booking_confirmed":
+            MessageLookupByLibrary.simpleMessage("booking confirmed"),
         "category": MessageLookupByLibrary.simpleMessage("Category"),
         "change_number": MessageLookupByLibrary.simpleMessage("Change number"),
         "check_now": MessageLookupByLibrary.simpleMessage("Check now"),
         "check_up": MessageLookupByLibrary.simpleMessage("Check Up"),
         "choose_a_doctor":
             MessageLookupByLibrary.simpleMessage("Choose a Doctor"),
-        "complete": MessageLookupByLibrary.simpleMessage("Complete"),
+        "complete": MessageLookupByLibrary.simpleMessage("complete"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "congratulations":
@@ -52,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "description_text_verification_screen":
             MessageLookupByLibrary.simpleMessage(
                 "Enter the 4-digit that we have sent via the phone number ."),
+        "diagnosis": MessageLookupByLibrary.simpleMessage("Diagnosis"),
         "do_not_have_account":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account ? "),
         "doctor_details":
@@ -94,12 +103,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_found_doctors":
             MessageLookupByLibrary.simpleMessage("No Doctors Founded"),
         "not_found": MessageLookupByLibrary.simpleMessage("Not Found"),
+        "note": MessageLookupByLibrary.simpleMessage("Note :"),
         "online": MessageLookupByLibrary.simpleMessage("Online"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pending": MessageLookupByLibrary.simpleMessage("pending"),
         "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "popular_doctors":
             MessageLookupByLibrary.simpleMessage("Popular Doctors"),
+        "prescription": MessageLookupByLibrary.simpleMessage("prescription"),
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("Privacy And Policy"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
@@ -122,6 +133,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "specialized_consultation":
             MessageLookupByLibrary.simpleMessage("Specialized\nconsultation"),
         "start_now": MessageLookupByLibrary.simpleMessage("Start Now"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "text_congratulations": MessageLookupByLibrary.simpleMessage(
             "Your account is ready to use, you will be redirected to the Home page in a few Seconds..."),
         "text_create_new_password_page":
@@ -136,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sign up to your account"),
         "text_verification_Screen":
             MessageLookupByLibrary.simpleMessage("Enter Verification Code"),
+        "treatment": MessageLookupByLibrary.simpleMessage("treatment"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "weight_report": MessageLookupByLibrary.simpleMessage("Weight")
       };

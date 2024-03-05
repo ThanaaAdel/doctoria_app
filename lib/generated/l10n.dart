@@ -830,10 +830,10 @@ class S {
     );
   }
 
-  /// `Complete`
+  /// `complete`
   String get complete {
     return Intl.message(
-      'Complete',
+      'complete',
       name: 'complete',
       desc: '',
       args: [],
@@ -855,6 +855,116 @@ class S {
     return Intl.message(
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       name: 'consultation_text_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Diagnosis patient's condition`
+  String get Diagnosis_patient_condition {
+    return Intl.message(
+      'Diagnosis patient\'s condition',
+      name: 'Diagnosis_patient_condition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `booking confirmed`
+  String get booking_confirmed {
+    return Intl.message(
+      'booking confirmed',
+      name: 'booking_confirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New`
+  String get add_new {
+    return Intl.message(
+      'Add New',
+      name: 'add_new',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `prescription`
+  String get prescription {
+    return Intl.message(
+      'prescription',
+      name: 'prescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `treatment`
+  String get treatment {
+    return Intl.message(
+      'treatment',
+      name: 'treatment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note :`
+  String get note {
+    return Intl.message(
+      'Note :',
+      name: 'note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Report`
+  String get add_report {
+    return Intl.message(
+      'Add Report',
+      name: 'add_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Diagnosis`
+  String get diagnosis {
+    return Intl.message(
+      'Diagnosis',
+      name: 'diagnosis',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Diagnosis`
+  String get add_diagnosis {
+    return Intl.message(
+      'Add Diagnosis',
+      name: 'add_diagnosis',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Assessment`
+  String get assessment {
+    return Intl.message(
+      'Assessment',
+      name: 'assessment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
       desc: '',
       args: [],
     );

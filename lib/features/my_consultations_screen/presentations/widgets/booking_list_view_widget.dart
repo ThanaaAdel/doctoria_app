@@ -1,3 +1,4 @@
+import 'package:doctoria_app/core/helper/extentions.dart';
 import 'package:doctoria_app/core/shared_widgets/app_elevated_button.dart';
 import 'package:doctoria_app/features/my_consultations_screen/data/models/booking_accept_model/booking_accept_model.dart';
 import 'package:doctoria_app/features/my_consultations_screen/logic/booking_accept_cubit/booking_accept_cubit.dart';
@@ -7,6 +8,7 @@ import 'package:doctoria_app/features/my_consultations_screen/presentations/widg
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/Routing/routers.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/spacing.dart';
 import '../../../../core/theming/styles.dart';
@@ -15,7 +17,13 @@ import '../../../../generated/l10n.dart';
 class BookingListViewWidget extends StatefulWidget {
   const BookingListViewWidget({
     Key? key,
-    required this.imageLink, required this.status, required this.description, required this.name, required this.time, required this.token, required this.bookingId,
+    required this.imageLink,
+    required this.status,
+    required this.description,
+    required this.name,
+    required this.time,
+    required this.token,
+    required this.bookingId,
   }) : super(key: key);
   final String token;
   final int bookingId;
@@ -34,20 +42,13 @@ class _BookingListViewWidgetState extends State<BookingListViewWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: 10.w,right: 10.h,top: 10.h,bottom: 10.h),
+      padding:
+          EdgeInsets.only(left: 10.w, right: 10.h, top: 10.h, bottom: 10.h),
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          boxShadow:  const [BoxShadow(
-            color: ColorsManager.lightGrey,
-            blurStyle: BlurStyle.outer,
-            offset: Offset(2, 2),
-            spreadRadius: 0,
-            blurRadius: 8,
-          )]
-        ),
+        decoration: decorationFromContainer(),
         child: Padding(
-          padding:  EdgeInsets.only(left: 20.w,right: 20.h,top: 20.h,bottom: 10.h),
+          padding:
+              EdgeInsets.only(left: 20.w, right: 20.h, top: 20.h, bottom: 10.h),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,102 +56,140 @@ class _BookingListViewWidgetState extends State<BookingListViewWidget> {
             children: [
               Row(
                 children: [
-                  Image.network(
-                      widget.imageLink, height: 60.h, width: 60.w),
+                  Image.network(widget.imageLink, height: 60.h, width: 60.w),
                   horizontalSpacing(5),
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(widget.name, style: TextStyles.font18Black500),
-                        Row(
-                          children: [
-                            Container(
-                              height: 10.h,
-                              width: 10.w,
-                              decoration: BoxDecoration(
-                                color: getStatusColor(),
-                                borderRadius: BorderRadius.circular(90),
-                              ),
-                            ),
-                            horizontalSpacing(3),
-                            Text(
-                             widget.status,
-                              style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: getStatusColor(),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          widget.time,
-                          style: TextStyles.font14Gray.copyWith(fontSize: 12.sp),
-                        ),
-                      ],
-                    ),
-                  ),
+                  nameAndTypeWidget(),
                 ],
               ),
               verticalSpacing(10),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Description :  ',
-                      style: TextStyles.font12Black500,
-                    ),
-                    TextSpan(
-                      text:
-                      widget.description,
-                      style: TextStyles.font14Gray.copyWith(fontSize: 12.sp),
-                    ),
-                  ],
-                ),
-              ),
+              descriptionTextWidget(),
               verticalSpacing(10),
-              widget.status == S.of(context).complete ?
-              const SizedBox():
-              BlocListener<BookingAcceptCubit,BookingAcceptStates>(
-                listener: (context, state) {
-                  state.whenOrNull(
-                      loading: (){
-                        showDialog(context: context, builder:
-                            (context) => const Center(child: CircularProgressIndicator(
-                          color: ColorsManager.mainBlue,
-                        ),),
-                        );
-                      },
-                      success: (bookingAcceptResponse){
-                        bookingAcceptModel = bookingAcceptResponse;
-
-                        setupAcceptState(context, bookingAcceptModel.message!.first.toString());
-                      },
-                      error:(error){
-                        setupErrorState(context, error);
-                      } );
-                },
-                child: AppTextButton(
-                    buttonHeight: 50.h,
-                    textStyle: TextStyles.font19White600,
-                    textButton: getStatusButton(), onPressed: (){
-                  widget.status == S.of(context).pending?
-                  context.read<BookingAcceptCubit>().emitBookingAcceptData(bookingId: widget.bookingId, token: widget.token,):null;
-                }),
-              )
+              widget.status == S.of(context).complete
+                  ? const SizedBox()
+                  : buildBlocListenerFromBookingAccept(context),
             ],
           ),
         ),
       ),
     );
-
   }
 
-  String getStatusButton(){
-    switch (widget.status){
+  BlocListener<BookingAcceptCubit, BookingAcceptStates<dynamic>> buildBlocListenerFromBookingAccept(BuildContext context) {
+    return BlocListener<BookingAcceptCubit, BookingAcceptStates>(
+                    listener: (context, state) {
+                      state.whenOrNull(
+                          loading: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => const Center(
+                            child: CircularProgressIndicator(
+                              color: ColorsManager.mainBlue,
+                            ),
+                          ),
+                        );
+                      }, success: (bookingAcceptResponse) {
+                        bookingAcceptModel = bookingAcceptResponse;
+                        setupAcceptState(
+                          onPressed: (){
+                            context.pop;
+                            context.pushNamed(Routes.diagnosisPatientConditionScreen);
+                          }
+                           ,
+                            context, bookingAcceptModel.message!.first.toString());
+                      }, error: (error) {
+                        setupErrorState(context, error);
+                      });
+                    },
+                    child: widget.status == "complete" ?
+                    const SizedBox():
+                    appTextButtomStates(context),
+                  );
+  }
+
+  AppTextButton appTextButtomStates(BuildContext context) {
+    return AppTextButton(
+                      buttonHeight: 50.h,
+                      textStyle: TextStyles.font19White600,
+                      textButton: getStatusButton(),
+                      onPressed: () {
+                        widget.status == "pending"
+                            ? context.read<BookingAcceptCubit>().emitBookingAcceptData(bookingId: widget.bookingId, token: widget.token,)
+                            : null;
+                      });
+  }
+
+  RichText descriptionTextWidget() {
+    return RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Description :  ',
+                    style: TextStyles.font12Black500,
+                  ),
+                  TextSpan(
+                    text: widget.description,
+                    style: TextStyles.font14Gray.copyWith(fontSize: 12.sp),
+                  ),
+                ],
+              ),
+            );
+  }
+
+  Expanded nameAndTypeWidget() {
+    return Expanded(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(widget.name, style: TextStyles.font18Black500),
+                      Row(
+                        children: [
+                          Container(
+                            height: 10.h,
+                            width: 10.w,
+                            decoration: BoxDecoration(
+                              color: getStatusColor(),
+                              borderRadius: BorderRadius.circular(90),
+                            ),
+                          ),
+                          horizontalSpacing(3),
+                          Text(
+                            widget.status,
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: getStatusColor(),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        widget.time,
+                        style:
+                            TextStyles.font14Gray.copyWith(fontSize: 12.sp),
+                      ),
+                    ],
+                  ),
+                );
+  }
+
+  BoxDecoration decorationFromContainer() {
+    return BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: const [
+            BoxShadow(
+              color: ColorsManager.lightGrey,
+              blurStyle: BlurStyle.outer,
+              offset: Offset(2, 2),
+              spreadRadius: 0,
+              blurRadius: 8,
+            )
+          ]);
+  }
+
+  String getStatusButton() {
+    switch (widget.status) {
       case "pending":
         return "Accept";
       case "active":
@@ -158,7 +197,7 @@ class _BookingListViewWidgetState extends State<BookingListViewWidget> {
       default:
         return "";
     }
-}
+  }
 
   Color getStatusColor() {
     switch (widget.status) {
@@ -170,5 +209,6 @@ class _BookingListViewWidgetState extends State<BookingListViewWidget> {
         return ColorsManager.completeColor; // Set the color for complete status
       default:
         return Colors.black; // Default color
-    }}
+    }
+  }
 }

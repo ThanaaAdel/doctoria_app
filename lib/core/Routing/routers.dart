@@ -17,5 +17,8 @@ class Routes {
   static const doctorDetailsScreen = "/doctorDetailsScreen";
   static const profileScreen = "/profileScreen";
   static const myConsultationScreen = "/myConsultationScreen";
+  static const diagnosisPatientConditionScreen = "/diagnosisPatientConditionScreen";
+  static const addReportScreen = "/addReportScreen";
+  static const addDiagnosisScreen = "/addDiagnosisScreen";
 
 }

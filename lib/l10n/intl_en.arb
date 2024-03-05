@@ -77,9 +77,20 @@
   "all_consulting": "All Consulting",
   "active": "Active",
   "pending": "pending",
-  "complete": "Complete",
+  "complete": "complete",
   "consultation_text": "There are no consultations now!",
-  "consultation_text_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  "consultation_text_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  "Diagnosis_patient_condition": "Diagnosis patient's condition",
+  "booking_confirmed": "booking confirmed",
+  "add_new": "Add New",
+  "prescription": "prescription",
+  "treatment": "treatment",
+  "note": "Note :",
+  "add_report": "Add Report",
+  "diagnosis": "Diagnosis",
+  "add_diagnosis": "Add Diagnosis",
+  "assessment": "Assessment",
+  "submit": "Submit"
 
 
 }

@@ -44,6 +44,7 @@ class _PhoneAndPasswordState extends State<PhoneAndPassword> {
             // ),
             verticalSpacing(20),
             AppTextFormField(
+              maxLines: 1,
               controller:  context.read<SignInCubit>().passwordController,
               contentPadding: EdgeInsets.only(top: 25.h, bottom: 25.h),
               prefixIcon: Image.asset(ImageManager.lockImage),

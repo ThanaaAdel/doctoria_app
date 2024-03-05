@@ -5,9 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/shared_widgets/app_elevated_button.dart';
 import '../../../../core/theming/image_manager.dart';
 import '../../../../core/theming/styles.dart';
-void setupAcceptState(BuildContext context, String error) {
+
+void setupAcceptState(
+    BuildContext context, String error, {VoidCallback? onPressed}) {
   context.pop();
-  showDialog(context: context,
+  showDialog(
+    context: context,
     builder: (context) => Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -19,23 +22,20 @@ void setupAcceptState(BuildContext context, String error) {
             content: Text(
               textAlign: TextAlign.center,
               error,
-              style: TextStyles.font14Blue500.copyWith(fontWeight: FontWeight.bold),
+              style: TextStyles.font14Blue500
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
             actions: [
               AppTextButton(
                 textStyle: TextStyles.font19White600,
-                textButton: 'View ', onPressed: (){
-
-                context.pop();
-
-              }, )
-
+                textButton: 'View ',
+                onPressed:onPressed,
+              )
             ],
-            icon: Image.asset(
-                height: 100.h,
-                ImageManager.successfullyImage),
+            icon: Image.asset(height: 100.h, ImageManager.successfullyImage),
           ),
         ),
       ],
-    ),);
+    ),
+  );
 }

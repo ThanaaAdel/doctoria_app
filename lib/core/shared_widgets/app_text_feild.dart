@@ -16,6 +16,7 @@ class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? textInputType;
   final double? borderRadius;
+  final int? maxLines;
   const AppTextFormField(
       {super.key,
       required this.hintText,
@@ -26,11 +27,12 @@ class AppTextFormField extends StatelessWidget {
       this.contentPadding,
       required this.validator,
       this.controller,
-      this.textInputType, this.prefixIcon, this.borderRadius});
+      this.textInputType, this.prefixIcon, this.borderRadius, this.maxLines});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines,
       keyboardType: textInputType,
       controller: controller,
       decoration: decorationFromTextField(),

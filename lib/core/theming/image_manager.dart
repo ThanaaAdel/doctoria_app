@@ -50,5 +50,13 @@ class ImageManager {
   static const selectedConsultationsIcon = "assets/images/selected_my_consultaions.png";
   static const unselectedConsultationsIcons = "assets/images/unselected_my_consultaions.png";
   static const selectedOnlineIcon = "assets/images/selected_online.png";
+  static const refreshIcon = "assets/images/refresh.png";
   static const unSelectedOnlineIcon = "assets/images/unselected_online.png";
+  static const videoIcon = "assets/images/video_icon.png";
+  static const successYellowIcon = "assets/images/success_yellow_icon.png";
+  static const phoneIcon = "assets/images/phone_icon.png";
+  static const messageIcon = "assets/images/message_icon.png";
+  static const photoPatient = "assets/images/photo_patient.png";
+    static const arrowDown = "assets/images/arrow_down.png";
+    static const prescriptionIcon  = "assets/images/Prescription_icon.png";
 }

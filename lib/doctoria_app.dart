@@ -16,7 +16,7 @@ class DoctorIaApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
-        locale: const Locale('en'),
+        locale: const Locale('ar'),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

@@ -8,6 +8,7 @@ class ApiConstant {
  static const String specializationPopularDoctors = "settings/specialization_popular_doctors";
  static const String bookingPatient = "/doctor/auth/bookings";
  static const String bookingAccept = "/doctor/auth/accept_booking";
+ static const String bookingAcceptDetails = "doctor/auth/booking_details";
 }
 
 class ApiErrors {
