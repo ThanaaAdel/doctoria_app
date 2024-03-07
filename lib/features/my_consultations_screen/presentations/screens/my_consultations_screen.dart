@@ -179,7 +179,8 @@ class _MyConsultationsScreenState extends State<MyConsultationsScreen>
             child: BookingListViewWidget(
               token:"Bearer ${widget.token}",
               bookingId: bookingPatientData.id!.toInt(),
-              time: calculateTimeDifference(bookingPatientData.time.toString()),
+              time:  bookingPatientData.time.toString(),
+              // time: calculateTimeDifference(bookingPatientData.time.toString()),
               name: bookingPatientData.patient!.name.toString(),
               description: bookingPatientData.desc.toString(),
               status: bookingPatientData.status.toString(),

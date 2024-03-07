@@ -12,9 +12,10 @@ import '../widgets/prescription_widget.dart';
 import '../widgets/text_and_icons_widget.dart';
 
 class DiagnosisPatientConditionScreen extends StatelessWidget {
-  const DiagnosisPatientConditionScreen({super.key, required this.bookingId, required this.token});
-  final int bookingId;
-  final String token;
+  const DiagnosisPatientConditionScreen({super.key, required this.name, required this.image});
+  final String name;
+  final String image;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +34,10 @@ class DiagnosisPatientConditionScreen extends StatelessWidget {
                 top: 10.h,
                 bottom: 10.h,
               ),
-              child:  Column(
+              child:Column(
                 children: [
                   const TextAndIconsWidget(),
-                  PhotoAndNameWidget(bookingId: bookingId,token: token),
+                  PhotoAndNameWidget(name: name,image: image),
                   const AddReportWidget(),
                   const DiagnosisWidget(),
                   const DiagnosisListWidget(),

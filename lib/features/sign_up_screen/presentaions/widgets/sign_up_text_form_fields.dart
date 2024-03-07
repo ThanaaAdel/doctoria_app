@@ -44,6 +44,7 @@ class _SignUpTextFormFieldsState extends State<SignUpTextFormFields> {
         // ),
         verticalSpacing(10),
         AppTextFormField(
+          maxLines: 1,
           controller: context.read<SignUpCubit>().passwordController,
           prefixIcon: Image.asset(ImageManager.lockImage),
           textInputType: TextInputType.visiblePassword,
@@ -66,6 +67,7 @@ class _SignUpTextFormFieldsState extends State<SignUpTextFormFields> {
         ),
         verticalSpacing(20),
         AppTextFormField(
+          maxLines: 1,
           controller: context.read<SignUpCubit>().confirmPasswordController,
           prefixIcon: Image.asset(ImageManager.lockImage),
           textInputType: TextInputType.visiblePassword,

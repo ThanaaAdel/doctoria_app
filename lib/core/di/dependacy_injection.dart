@@ -7,6 +7,8 @@ import 'package:doctoria_app/features/my_favorite_doctor_screen/logic/doctor_cub
 import 'package:doctoria_app/features/profile_screen/data/repos/logout_repo.dart';
 import 'package:doctoria_app/features/profile_screen/logic/logout_cubit/logout_cubit.dart';
 import 'package:get_it/get_it.dart';
+import '../../features/diagnosis_patient_condition_screen/data/repos/booking_acceptt_details_repo/booking_acceptt_details_repo.dart';
+import '../../features/diagnosis_patient_condition_screen/logic/booking_accept_details_cubit/booking_accept_details_cubit.dart';
 import '../../features/home_patient_screen/data/repos/home_slider_repo/home_slider_repo.dart';
 import '../../features/home_patient_screen/data/repos/specialization_popular_doctors_repo/specialization_popular_doctors_repo.dart';
 import '../../features/home_patient_screen/logic/cubits/slider_cubit/slider_cubit.dart';
@@ -47,4 +49,7 @@ final getIt = GetIt.instance;
   // booking accept
   getIt.registerLazySingleton<BookingAcceptRepo>(() => BookingAcceptRepo(getIt()));
   getIt.registerFactory<BookingAcceptCubit>(() => BookingAcceptCubit(getIt()));
+  // booking accept Details
+  getIt.registerLazySingleton<BookingAcceptDetailsRepo>(() => BookingAcceptDetailsRepo(getIt()));
+  getIt.registerFactory<BookingAcceptDetailsCubit>(() => BookingAcceptDetailsCubit(getIt()));
  }

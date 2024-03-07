@@ -1,4 +1,3 @@
-import 'package:doctoria_app/core/helper/extentions.dart';
 import 'package:doctoria_app/core/shared_widgets/app_elevated_button.dart';
 import 'package:doctoria_app/features/my_consultations_screen/data/models/booking_accept_model/booking_accept_model.dart';
 import 'package:doctoria_app/features/my_consultations_screen/logic/booking_accept_cubit/booking_accept_cubit.dart';
@@ -8,7 +7,6 @@ import 'package:doctoria_app/features/my_consultations_screen/presentations/widg
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/Routing/routers.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/spacing.dart';
 import '../../../../core/theming/styles.dart';
@@ -90,12 +88,10 @@ class _BookingListViewWidgetState extends State<BookingListViewWidget> {
                       }, success: (bookingAcceptResponse) {
                         bookingAcceptModel = bookingAcceptResponse;
                         setupAcceptState(
-                          onPressed: (){
-                            context.pop;
-                            context.pushNamed(Routes.diagnosisPatientConditionScreen);
-                          }
-                           ,
-                            context, bookingAcceptModel.message!.first.toString());
+                          bookingId: widget.bookingId,
+                            token: widget.token,
+                            context,
+                            bookingAcceptModel.message!.first.toString());
                       }, error: (error) {
                         setupErrorState(context, error);
                       });

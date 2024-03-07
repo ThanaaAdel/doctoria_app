@@ -34,7 +34,7 @@ class _SignInBlocListenerState extends State<SignUpBlocListener> {
             success: (loginResponse){
               signUpResponseBody = loginResponse;
               context.pop();
-              context.pushNamed(Routes.homeScreen,arguments: signUpResponseBody);
+              context.pushNamed(Routes.homeScreen);
             },
             error:(error){
               setupErrorState(context, error);
