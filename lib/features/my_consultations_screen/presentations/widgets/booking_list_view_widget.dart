@@ -72,7 +72,7 @@ class _BookingListViewWidgetState extends State<BookingListViewWidget> {
     );
   }
 
-  BlocListener<BookingAcceptCubit, BookingAcceptStates<dynamic>> buildBlocListenerFromBookingAccept(BuildContext context) {
+  BlocListener<BookingAcceptCubit, BookingAcceptStates> buildBlocListenerFromBookingAccept(BuildContext context) {
     return BlocListener<BookingAcceptCubit, BookingAcceptStates>(
                     listener: (context, state) {
                       state.whenOrNull(

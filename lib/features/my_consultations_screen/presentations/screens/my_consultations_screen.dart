@@ -1,8 +1,10 @@
+import 'package:doctoria_app/core/networking/api_constant.dart';
 import 'package:doctoria_app/core/theming/image_manager.dart';
 import 'package:doctoria_app/features/my_consultations_screen/presentations/widgets/booking_list_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/di/dependacy_injection.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
@@ -14,8 +16,8 @@ import '../../logic/booking_cubit/booking_cubit.dart';
 import '../../logic/booking_cubit/booking_states.dart';
 
 class MyConsultationsScreen extends StatefulWidget {
-  const MyConsultationsScreen({Key? key, required this.token}) : super(key: key);
-  final String token;
+  const MyConsultationsScreen({Key? key}) : super(key: key);
+ 
   @override
   State<MyConsultationsScreen> createState() => _MyConsultationsScreenState();
 }
@@ -24,12 +26,23 @@ class _MyConsultationsScreenState extends State<MyConsultationsScreen>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
   late String currentStatus; // Add a variable to track the current status
+ String? token;
 
+
+  
+Future<void> loadToken() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String? loadedToken = sharedPreferences.getString(ApiConstant.keyAccessToken);
+    setState(() {
+      token = loadedToken;
+    });
+  }
   @override
   void initState() {
     tabController = TabController(length: 3, vsync: this);
     currentStatus = "pending"; // Set the initial status
     fetchData(); // Fetch data initially
+     loadToken();
 
     tabController.addListener(() {
       // Fetch data whenever the tab changes
@@ -57,7 +70,7 @@ class _MyConsultationsScreenState extends State<MyConsultationsScreen>
     context.read<BookingCubit>().emitBookingData(
           status: currentStatus,
           token:
-              "Bearer ${widget.token}",
+              "Bearer $token",
         );
   }
 
@@ -177,7 +190,7 @@ class _MyConsultationsScreenState extends State<MyConsultationsScreen>
           return BlocProvider(
             create: (context) => getIt<BookingAcceptCubit>(),
             child: BookingListViewWidget(
-              token:"Bearer ${widget.token}",
+              token:"Bearer $token",
               bookingId: bookingPatientData.id!.toInt(),
               time:  bookingPatientData.time.toString(),
               // time: calculateTimeDifference(bookingPatientData.time.toString()),

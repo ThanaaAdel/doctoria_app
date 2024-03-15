@@ -10,6 +10,8 @@ import '../../features/create_new_password_screen/presentations/screens/create_n
 import '../../features/diagnosis_patient_condition_screen/presentaions/screens/diagnosis_patient_condition_screen.dart';
 import '../../features/edit_profile_screen/presentaions/screens/edit_profile_screen.dart';
 import '../../features/home_patient_screen/presentations/screens/home_patient_screen.dart';
+import '../../features/my_consultations_screen/logic/booking_accept_cubit/booking_accept_cubit.dart';
+import '../../features/my_consultations_screen/logic/booking_cubit/booking_cubit.dart';
 import '../../features/my_favorite_doctor_screen/logic/doctor_cubit/doctor_cubit.dart';
 import '../../features/my_favorite_doctor_screen/presentaions/screens/my_favorite_doctor_screen.dart';
 import '../../features/reports_details_screen/presentaions/screens/reports_details_screen.dart';
@@ -54,20 +56,24 @@ class AppRouter {
         );
       case Routes.signInScreen:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
+          builder: (context) => MultiBlocProvider(providers: [
+            BlocProvider(
               create: (context) => getIt<SignInCubit>(),
-              child: const SignInScreen()),
+            ),
+          ], child: const SignInScreen()),
         );
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => const ResetPasswordScreen(),
         );
       case Routes.diagnosisPatientConditionScreen:
-
-      final name = settings.arguments as String;
+        final name = settings.arguments as String;
         final image = settings.arguments as String;
         return MaterialPageRoute(
-          builder: (context) =>  DiagnosisPatientConditionScreen(name: name,image: image,),
+          builder: (context) => DiagnosisPatientConditionScreen(
+            name: name,
+            image: image,
+          ),
         );
       case Routes.createNewPassword:
         return MaterialPageRoute(
@@ -104,17 +110,29 @@ class AppRouter {
           builder: (context) => const DoctorDetailsScreen(),
         );
       case Routes.buttomNavigationDoctor:
-        final token = settings.arguments as String;
         return MaterialPageRoute(
-          builder: (context) => ButtonNavigationDoctor(
-            token: token,
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<BookingCubit>(),
+              ),
+            ],
+            child: ButtonNavigationDoctor(),
           ),
         );
+
       case Routes.myConsultationScreen:
-        final token = settings.arguments as String;
         return MaterialPageRoute(
-          builder: (context) =>  MyConsultationsScreen(
-            token: token,
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<BookingAcceptCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<BookingAcceptDetailsCubit>(),
+              ),
+            ],
+            child: const MyConsultationsScreen(),
           ),
         );
       case Routes.profileScreen:

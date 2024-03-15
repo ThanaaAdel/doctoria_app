@@ -60,6 +60,7 @@ class _SignInScreenState extends State<SignInScreen> {
       context.read<SignInCubit>().emitSignInStates();
 
       setState(() {
+
         context.read<SignInCubit>().phoneController.clear();
         context.read<SignInCubit>().passwordController.clear();
       });

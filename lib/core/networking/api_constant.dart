@@ -1,4 +1,6 @@
 class ApiConstant {
+ static const String keyAccessToken = "keyAccessToken";
+ static const String patientOrDoctor = "patientOrDoctor";
  static const String apiBaseUrl = "https://doctoria.thetailorsweb.com/api/";
  static const String login = "auth/login";
  static const String signUp = "auth/signup";

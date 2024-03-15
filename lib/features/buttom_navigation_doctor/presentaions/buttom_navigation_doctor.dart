@@ -1,7 +1,4 @@
-import 'package:doctoria_app/features/my_consultations_screen/logic/booking_cubit/booking_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/di/dependacy_injection.dart';
 import '../../../core/theming/colors.dart';
 import '../../../core/theming/image_manager.dart';
 import '../../my_consultations_screen/presentations/screens/my_consultations_screen.dart';
@@ -12,10 +9,10 @@ import 'package:get/get.dart';
 
 import '../../../generated/l10n.dart';
 class ButtonNavigationDoctor extends StatelessWidget {
-  ButtonNavigationDoctor({Key? key, required this.token}) : super(key: key);
+  ButtonNavigationDoctor({Key? key}) : super(key: key);
 
   final controller = Get.put(NavigationController());
-  final String token;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,13 +48,10 @@ class ButtonNavigationDoctor extends StatelessWidget {
       )),
       body: Obx(() => IndexedStack(
         index: controller.selectedIndex.value,
-        children:  [
-
-          const ReportsScreen(),
-          BlocProvider(
-              create: (context) => getIt<BookingCubit>(),
-              child:  MyConsultationsScreen(token: token,)),
-          const ProfileScreen(),
+        children:  const [
+          ReportsScreen(),
+          MyConsultationsScreen(),
+          ProfileScreen(),
 
         ],
       )),
