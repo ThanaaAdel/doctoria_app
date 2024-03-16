@@ -8,9 +8,9 @@ class LogoutCubit extends Cubit<LogoutStates> {
   LogoutCubit(this.doctorRepo) : super(const LogoutStates.initial());
 
 
-  void emitLogout() async {
+  void emitLogout(String token) async {
     emit(const LogoutStates.loading());
-    final response = await doctorRepo.logout();
+    final response = await doctorRepo.logout(token);
     response.when(success: (logoutData) {
       emit(LogoutStates.success(logoutData));
     }, failure: (error) {

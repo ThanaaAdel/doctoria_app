@@ -2,8 +2,10 @@ import 'package:doctoria_app/features/profile_screen/data/models/logout_model/lo
 import 'package:doctoria_app/features/profile_screen/logic/logout_cubit/logout_cubit.dart';
 import 'package:doctoria_app/features/profile_screen/logic/logout_cubit/logout_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/di/dependacy_injection.dart';
 import '../../../../core/helper/extentions.dart';
+import '../../../../core/networking/api_constant.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/image_manager.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,20 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  String? token;
+
+  Future<void> loadToken() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String? loadedToken = sharedPreferences.getString(ApiConstant.keyAccessToken);
+    setState(() {
+      token = loadedToken;
+    });
+  }
   @override
+  void initState() {
+    loadToken();
+    super.initState();
+  }
   Widget build(BuildContext context) {
     return ListView(
       children: [
@@ -98,7 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                    LogoutDataModel logoutDataModel = logoutData;
 
                         context.pop();
-                        if(logoutDataModel.status == 200 ) {
+                        if(logoutDataModel.status == 401 ) {
                           context.pushNamed(Routes.signInScreen);
                         }
                       },
@@ -112,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   textDesc: S.of(context).logout,
                   onPressed: () {
                  setState(() {
-                   context.read<LogoutCubit>().emitLogout();
+                   context.read<LogoutCubit>().emitLogout(token!);
                  });
                   },
                 ),

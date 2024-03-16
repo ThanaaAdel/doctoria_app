@@ -22,7 +22,8 @@ void setupAcceptState(BuildContext context, String error,
           textStyle: TextStyles.font19White600,
           textButton: 'View',
           onPressed: () {
-            context.pushNamed(Routes.diagnosisPatientConditionScreen);
+            context.pushNamed(Routes.diagnosisPatientConditionScreen,
+                arguments: {'bookingId': bookingId, 'token': token});
           },
         ),
       ],

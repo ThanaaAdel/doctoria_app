@@ -32,13 +32,12 @@ abstract class ApiService {
   Future<SignUpResponseBody> signUp(
       @Body() SignUpRequestBody signUpRequestBody,
       );
-
-  //logout
-
-  @GET(ApiConstant.logout)
-  @Headers({"Authorization": "Bearer {token}"})
-  Future<LogoutDataModel> logout();
-
+  // logout
+  @POST(ApiConstant.logout)
+  @FormUrlEncoded()
+  Future<LogoutDataModel> logout(
+      @Header("Authorization") String token,
+      );
   // homeSlider data
   @GET(ApiConstant.homeSlider)
   @FormUrlEncoded()

@@ -67,14 +67,16 @@ class AppRouter {
           builder: (context) => const ResetPasswordScreen(),
         );
       case Routes.diagnosisPatientConditionScreen:
-        final name = settings.arguments as String;
-        final image = settings.arguments as String;
+        final args = settings.arguments as Map<String, dynamic>;
+        final int bookingId = args['bookingId'] as int;
+        final String token = args['token'] as String;
         return MaterialPageRoute(
-          builder: (context) => DiagnosisPatientConditionScreen(
-            name: name,
-            image: image,
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<BookingAcceptDetailsCubit>(),
+            child: DiagnosisPatientConditionScreen(bookingId: bookingId, token: token),
           ),
         );
+
       case Routes.createNewPassword:
         return MaterialPageRoute(
           builder: (context) => const CreateNewPasswordScreen(),

@@ -192,8 +192,7 @@ Future<void> loadToken() async {
             child: BookingListViewWidget(
               token:"Bearer $token",
               bookingId: bookingPatientData.id!.toInt(),
-              time:  bookingPatientData.time.toString(),
-              // time: calculateTimeDifference(bookingPatientData.time.toString()),
+              time:  bookingPatientData.createdAt.toString(),
               name: bookingPatientData.patient!.name.toString(),
               description: bookingPatientData.desc.toString(),
               status: bookingPatientData.status.toString(),
@@ -206,33 +205,7 @@ Future<void> loadToken() async {
       },
     );
   }
-  String calculateTimeDifference(String? bookingTime) {
-    if (bookingTime == null) {
-      return ''; // Handle null or invalid input
-    }
 
-    // Assuming bookingTime format is 'HH:mm:ss'
-    List<String> timeComponents = bookingTime.split(':');
-
-    DateTime bookingDateTime = DateTime.now().subtract(Duration(
-      hours: int.parse(timeComponents[0]),
-      minutes: int.parse(timeComponents[1]),
-      seconds: int.parse(timeComponents[2]),
-    ));
-
-    DateTime now = DateTime.now();
-    Duration difference = now.difference(bookingDateTime);
-
-    if (difference.inDays > 0) {
-      return '${difference.inDays} days ago';
-    } else if (difference.inHours > 0) {
-      return '${difference.inHours} hours ago';
-    } else if (difference.inMinutes > 0) {
-      return '${difference.inMinutes} min ago'; // Display as "X min ago"
-    } else {
-      return 'Just now';
-    }
-  }
 
 
 }

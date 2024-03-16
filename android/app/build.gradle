@@ -50,6 +50,15 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
     flavorDimensions "default"
 
     productFlavors {
@@ -61,14 +70,6 @@ android {
             dimension "default"
             resValue "string", "app_name", "Doctoria Development"
             applicationIdSuffix ".dev"
-        }
-    }
-
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
         }
     }
 }
